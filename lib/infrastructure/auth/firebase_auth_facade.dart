@@ -32,7 +32,6 @@ class FirebaseAuthFacade implements IAuthFacade {
       return right(left(const Register()));
     } on PlatformException catch (e) {
       if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
-
         return left(const AuthFailure.emailAlreadyInUse());
       } else {
         return left(const AuthFailure.serverError());
@@ -92,34 +91,35 @@ class FirebaseAuthFacade implements IAuthFacade {
       onValue.reload();
     });
     bool emailVerificationIsSent = false;
-     _firebaseAuth.currentUser().then((onValue) {
+    _firebaseAuth.currentUser().then((onValue) {
       if (onValue.isEmailVerified) {
         emailVerificationIsSent = false;
       } else {
         onValue.sendEmailVerification();
         emailVerificationIsSent = true;
       }
-    }).catchError((onError)=>{
-      emailVerificationIsSent = false
-    });
+    }).catchError((onError) => {emailVerificationIsSent = false});
     return emailVerificationIsSent;
   }
 
   @override
   Future<Either<ValidateFailure, Unit>> createDocumentForVerifiedVendorCallable(
       String name) async {
+    IdTokenResult token;
+    var user = await _firebaseAuth.currentUser();
+    token = await user.getIdToken();
+
     final HttpsCallable callable = CloudFunctions.instance.getHttpsCallable(
       functionName: "createDocumentForVerifiedVendorCallable",
     );
-
-    return callable.call(<String, dynamic>{
-      "name": "$name",
-    }).then((response) {
+    final response = await callable
+        .call(<String, dynamic>{"name": "$name", "token": "${token.token}"});
+    try {
+      print("Response: ${response.data}");
       if (response.data['Complete'] != null) {
         if (response.data['Complete'] == name) {
           return right(unit);
-        }
-        else{
+        } else {
           return left(const ValidateFailure.unknownError());
         }
       } else if (response.data['Error'] != null) {
@@ -133,11 +133,14 @@ class FirebaseAuthFacade implements IAuthFacade {
         } else {
           return left(const ValidateFailure.unknownError());
         }
-      }
-      else{
+      } else {
+        print("Response: $response");
         return left(const ValidateFailure.unknownError());
       }
-    });
+    } catch (e) {
+      print("Response: $response.data");
+      return left(const ValidateFailure.unknownError());
+    }
   }
 
   @override

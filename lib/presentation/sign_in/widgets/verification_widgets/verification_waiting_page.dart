@@ -23,27 +23,13 @@ class VerificationForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ValidationBloc, ValidationState>(
       listener: (context, state) {
-        state.createDocumentForVendor.fold(() => null, (either) {
-          either.fold((failure) {
-            FlushbarHelper.createError(
-                message: failure.map(
-                    emailNotVerified: (_) =>
-                        "Your Email Has Not Been Verified \n Consider Checking Your Spam Mail In case Our Email Was Handled As Spam",
-                    vendorNotApproved: (_) =>
-                        "You Have not Been Approved as a Vendor \n Contact the Developers",
-                    bothNotValid: (_) =>
-                        "Your Email Has Not Been Verified \n You Have not Been Approved as a Vendor \n Contact the Developers",
-                    unknownError: (_) =>
-                        "Unknown Error, This Could Be Caused By A Flaky Connection "),
-                title: "Opps Something Went Wrong");
-          }, (r) => null);
-        });
-
-        if (state.sendEmailVerification) {
+        if (state.sendEmailVerification == true) {
           // ignore: avoid_single_cascade_in_expression_statements
           Flushbar(
             title: "Hey Vendor",
             isDismissible: true,
+            duration: const Duration(seconds: 5),
+            dismissDirection: FlushbarDismissDirection.HORIZONTAL,
             flushbarPosition: FlushbarPosition.TOP,
             message:
                 "An Email Has Been to Sent To Your Account \n Please Check Your Email To Verify",
@@ -57,9 +43,26 @@ class VerificationForm extends StatelessWidget {
                 blurRadius: 3.0,
               )
             ],
-          )..show(context);
+          ).show(context);
         }
-        if (state.creatingDocument) {}
+
+        state.createDocumentForVendor.fold(() => null, (either) {
+          either.fold((failure) {
+            FlushbarHelper.createError(
+                    duration: const Duration(seconds: 4),
+                    message: failure.map(
+                        emailNotVerified: (_) =>
+                            "Your Email Has Not Been Verified \n Consider Checking Your Spam Mail In case Our Email Was Handled As Spam",
+                        vendorNotApproved: (_) =>
+                            "You Have not Been Approved as a Vendor \n Contact the Developers",
+                        bothNotValid: (_) =>
+                            "Your Email Has Not Been Verified \n You Have not Been Approved as a Vendor \n Contact the Developers",
+                        unknownError: (_) =>
+                            "Unknown Error, This Could Be Caused By A Flaky Connection "),
+                    title: "Opps Something Went Wrong")
+                .show(context);
+          }, (r) => null);
+        });
       },
       builder: (BuildContext context, ValidationState state) {
         return Container(
@@ -73,7 +76,7 @@ class VerificationForm extends StatelessWidget {
                 0.33,
                 0.66,
               ],
-                  colors:const [
+                  colors: const [
                 Color(0xFF77A1D3),
                 Color(0xFF79CBCA),
                 Color(0xffe684ae)
@@ -89,22 +92,23 @@ class VerificationForm extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       height: 50,
-
                       child: RaisedButton(
                         padding: const EdgeInsets.all(0.0),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80.0)),
                         disabledElevation: 0,
                         disabledColor: Colors.grey,
                         textColor: Colors.white,
                         onPressed: () => !state.creatingDocument ||
-                            !state.sendingEmailVerification
-                            ? context.bloc<ValidationBloc>().add(
-                            const ValidationEvent.createDocumentForVendor())
+                                !state.sendingEmailVerification
+                            ? {
+                                context.bloc<ValidationBloc>().add(
+                                    const ValidationEvent
+                                        .createDocumentForVendor())
+                              }
                             : null,
                         elevation: 10.0,
-
-                          child:Ink(
-
+                        child: Ink(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30.0),
                                 gradient: LinearGradient(
@@ -116,27 +120,24 @@ class VerificationForm extends StatelessWidget {
                                       0.33,
                                       0.66,
                                     ],
-                                    colors:const [
+                                    colors: const [
                                       Color(0xFF59C173),
                                       Color(0xFFa17fe0),
                                       Color(0xff5D26C1)
                                     ])),
-                              child: Container(
-                                constraints:const BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
-                                alignment: Alignment.center,
-                                child: Text(
-                                  "I Have Verified My Email",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 15.0,
-                                      fontFamily: "ShadowsIntoLightTwo",
-                                      color: Colors.white
-                                  ),
-                                ),
-                              )
-                          ),
-
-
+                            child: Container(
+                              constraints: const BoxConstraints(
+                                  maxWidth: 300.0, minHeight: 50.0),
+                              alignment: Alignment.center,
+                              child: Text(
+                                "I Have Verified My Email",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 15.0,
+                                    fontFamily: "ShadowsIntoLightTwo",
+                                    color: Colors.white),
+                              ),
+                            )),
                       ),
                     ),
                     const Padding(
@@ -147,41 +148,43 @@ class VerificationForm extends StatelessWidget {
                       child: RaisedButton(
                         elevation: 10,
                         padding: EdgeInsets.all(0.0),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80.0)),
                         disabledElevation: 0,
                         disabledColor: Colors.grey,
                         textColor: Colors.white,
                         onPressed: () => !state.creatingDocument ||
-                            !state.sendingEmailVerification
+                                !state.sendingEmailVerification
                             ? context.bloc<ValidationBloc>().add(
-                            const ValidationEvent.sendVerificationEmail())
+                                const ValidationEvent.sendVerificationEmail())
                             : null,
                         child: Ink(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30.0),
-                              gradient: const LinearGradient(colors: [Color(0xFFFF0099),
-                                Color(0xFF493240),],
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                              ),
+                            borderRadius: BorderRadius.circular(30.0),
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xFFFF0099),
+                                Color(0xFF493240),
+                              ],
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                            ),
                           ),
                           child: Container(
-                            constraints:const BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                            constraints: const BoxConstraints(
+                                maxWidth: 300.0, minHeight: 50.0),
                             alignment: Alignment.center,
                             child: Text(
                               "Send Email Verification",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.white
-                              ),
+                                  fontSize: 15.0, color: Colors.white),
                             ),
                           ),
                         ),
 //                        child: const Text(''),
                       ),
                     ),
-
                   ],
                 )),
               )

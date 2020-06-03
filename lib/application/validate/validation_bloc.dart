@@ -29,33 +29,32 @@ class ValidationBloc extends Bloc<ValidationEvent, ValidationState> {
   Stream<ValidationState> mapEventToState(
     ValidationEvent event,
   ) async* {
-    event.map(
-      sendVerificationEmail: (e) async*{
-
+    yield* event.map(
+      sendVerificationEmail: (e) async* {
         yield state.copyWith(
-            sendingEmailVerification:true
-        );
-        final bool emailVerificationIsSent =await _authFacade.sendVerificationEmail();
+            sendingEmailVerification: true,
+            sendEmailVerification: true,
+            createDocumentForVendor: none());
+//        final bool emailVerificationIsSent =
+//            await _authFacade.sendVerificationEmail();
         yield state.copyWith(
-          sendingEmailVerification:false,
-          sendEmailVerification:emailVerificationIsSent,
-        );
+            sendingEmailVerification: false,
+            sendEmailVerification: false,
+            createDocumentForVendor: none()
+//          sendEmailVerification: emailVerificationIsSent,
+            );
       },
-      createDocumentForVendor: (e) async*{
+      createDocumentForVendor: (e) async* {
         Either<ValidateFailure, Unit> createDocumentForVendor;
-
         yield state.copyWith(
-          creatingDocument:true,
-            createDocumentForVendor:none()
+            creatingDocument: true, createDocumentForVendor: none());
 
-        );
-        createDocumentForVendor = await _authFacade.createDocumentForVerifiedVendorCallable("undefined");
+        createDocumentForVendor = await _authFacade
+            .createDocumentForVerifiedVendorCallable("undefined");
         yield state.copyWith(
-          creatingDocument:false,
-          createDocumentForVendor:some(createDocumentForVendor)
-        );
-
-      },);
-
+            creatingDocument: false,
+            createDocumentForVendor: some(createDocumentForVendor));
+      },
+    );
   }
 }

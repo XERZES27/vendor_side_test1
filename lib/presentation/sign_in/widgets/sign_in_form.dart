@@ -15,35 +15,36 @@ class SignInForm extends StatelessWidget {
               (l) => {
                     FlushbarHelper.createError(
                         message: l.maybeMap(
-                            canceledByUser: (_) => 'Canceled', orElse: () {
+                            canceledByUser: (_) => 'Canceled',
+                            orElse: () {
                               return 'Canceled';
-                        }))
+                            })).show(context)
                   },
               (r) => {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => VerificationPage()),
-                )
-              }));
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => VerificationPage()),
+                    )
+                  }));
 
       state.authFailureOrSuccessOption.fold(
           () {},
           (either) => either.fold((failure) {
-
                 FlushbarHelper.createError(
-                    message: failure.map(
-                        canceledByUser: (_) => 'Cancelled',
-                        serverError: (_) => 'Server Error',
-                        emailAlreadyInUse: (_)  {
-                          print('Email Already in Use');
-                          return 'Email Already in Use';},
-
-                        invalidEmailAndPasswordCombination: (_) =>
-                            'Invalid Email and Password Combination'));
+                        message: failure.map(
+                            canceledByUser: (_) => 'Cancelled',
+                            serverError: (_) => 'Server Error',
+                            emailAlreadyInUse: (_) {
+                              print('Email Already in Use');
+                              return 'Email Already in Use';
+                            },
+                            invalidEmailAndPasswordCombination: (_) =>
+                                'Invalid Email and Password Combination'))
+                    .show(context);
               }, (right) {
                 if (right.isRight()) {
-
-                } else if (right.isLeft()){
+                } else if (right.isLeft()) {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => VerificationPage()),
@@ -51,7 +52,6 @@ class SignInForm extends StatelessWidget {
                 }
               }));
     }, builder: (context, state) {
-
       return Form(
         autovalidate: state.showErrorMessages,
         child: ListView(
