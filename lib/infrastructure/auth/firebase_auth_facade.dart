@@ -21,7 +21,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn);
 
   @override
-  Future<Either<AuthFailure, Either<Register, Signin>>>
+  Future<Either<AuthFailure, AuthSuccess>>
       registerWithEmailAndPassword(
           {EmailAddress emailAddress, Password password}) async {
     final emailAddressStr = emailAddress.getOrCrash();
@@ -29,7 +29,7 @@ class FirebaseAuthFacade implements IAuthFacade {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
           email: emailAddressStr, password: passwordStr);
-      return right(left(const Register()));
+      return right(AuthSuccess.register());
     } on PlatformException catch (e) {
       if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
         return left(const AuthFailure.emailAlreadyInUse());
@@ -40,14 +40,14 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Either<Register, Signin>>> signInEmailAndPassword(
+  Future<Either<AuthFailure, AuthSuccess>> signInEmailAndPassword(
       {EmailAddress emailAddress, Password password}) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: emailAddressStr, password: passwordStr);
-      return right(right(const Signin()));
+      return right(const AuthSuccess.signin());
     } on PlatformException catch (e) {
       if (e.code == 'ERROR_WRONG_PASSWORD' ||
           e.code == 'ERROR_USER_NOT_FOUNT') {
@@ -59,7 +59,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> signInWithGoogle() async {
+  Future<Either<AuthFailure, AuthSuccess>> signInWithGoogle() async {
     try {
       final googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
@@ -71,12 +71,14 @@ class FirebaseAuthFacade implements IAuthFacade {
           accessToken: googleAuthentication.accessToken);
 
       return _firebaseAuth.signInWithCredential(authCredential).then((value) {
-        return right(unit);
+        return right(const AuthSuccess.googleSignin());
       });
     } on PlatformException catch (e) {
       return left(const AuthFailure.serverError());
     }
   }
+
+
 
   @override
   Future<Option<User>> getSignedInUser() {

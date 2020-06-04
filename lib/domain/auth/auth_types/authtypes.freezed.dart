@@ -9,8 +9,8 @@ part of 'authtypes.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$authtypesTearOff {
-  const _$authtypesTearOff();
+class _$AuthSuccessTearOff {
+  const _$AuthSuccessTearOff();
 
   Register register() {
     return const Register();
@@ -19,47 +19,56 @@ class _$authtypesTearOff {
   Signin signin() {
     return const Signin();
   }
+
+  GoogleSignin googleSignin() {
+    return const GoogleSignin();
+  }
 }
 
 // ignore: unused_element
-const $authtypes = _$authtypesTearOff();
+const $AuthSuccess = _$AuthSuccessTearOff();
 
-mixin _$authtypes {
+mixin _$AuthSuccess {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result register(),
     @required Result signin(),
+    @required Result googleSignin(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result register(),
     Result signin(),
+    Result googleSignin(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result register(Register value),
     @required Result signin(Signin value),
+    @required Result googleSignin(GoogleSignin value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result register(Register value),
     Result signin(Signin value),
+    Result googleSignin(GoogleSignin value),
     @required Result orElse(),
   });
 }
 
-abstract class $authtypesCopyWith<$Res> {
-  factory $authtypesCopyWith(authtypes value, $Res Function(authtypes) then) =
-      _$authtypesCopyWithImpl<$Res>;
+abstract class $AuthSuccessCopyWith<$Res> {
+  factory $AuthSuccessCopyWith(
+          AuthSuccess value, $Res Function(AuthSuccess) then) =
+      _$AuthSuccessCopyWithImpl<$Res>;
 }
 
-class _$authtypesCopyWithImpl<$Res> implements $authtypesCopyWith<$Res> {
-  _$authtypesCopyWithImpl(this._value, this._then);
+class _$AuthSuccessCopyWithImpl<$Res> implements $AuthSuccessCopyWith<$Res> {
+  _$AuthSuccessCopyWithImpl(this._value, this._then);
 
-  final authtypes _value;
+  final AuthSuccess _value;
   // ignore: unused_field
-  final $Res Function(authtypes) _then;
+  final $Res Function(AuthSuccess) _then;
 }
 
 abstract class $RegisterCopyWith<$Res> {
@@ -67,7 +76,7 @@ abstract class $RegisterCopyWith<$Res> {
       _$RegisterCopyWithImpl<$Res>;
 }
 
-class _$RegisterCopyWithImpl<$Res> extends _$authtypesCopyWithImpl<$Res>
+class _$RegisterCopyWithImpl<$Res> extends _$AuthSuccessCopyWithImpl<$Res>
     implements $RegisterCopyWith<$Res> {
   _$RegisterCopyWithImpl(Register _value, $Res Function(Register) _then)
       : super(_value, (v) => _then(v as Register));
@@ -81,7 +90,7 @@ class _$Register implements Register {
 
   @override
   String toString() {
-    return 'authtypes.register()';
+    return 'AuthSuccess.register()';
   }
 
   @override
@@ -97,9 +106,11 @@ class _$Register implements Register {
   Result when<Result extends Object>({
     @required Result register(),
     @required Result signin(),
+    @required Result googleSignin(),
   }) {
     assert(register != null);
     assert(signin != null);
+    assert(googleSignin != null);
     return register();
   }
 
@@ -108,6 +119,7 @@ class _$Register implements Register {
   Result maybeWhen<Result extends Object>({
     Result register(),
     Result signin(),
+    Result googleSignin(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -122,9 +134,11 @@ class _$Register implements Register {
   Result map<Result extends Object>({
     @required Result register(Register value),
     @required Result signin(Signin value),
+    @required Result googleSignin(GoogleSignin value),
   }) {
     assert(register != null);
     assert(signin != null);
+    assert(googleSignin != null);
     return register(this);
   }
 
@@ -133,6 +147,7 @@ class _$Register implements Register {
   Result maybeMap<Result extends Object>({
     Result register(Register value),
     Result signin(Signin value),
+    Result googleSignin(GoogleSignin value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -143,7 +158,7 @@ class _$Register implements Register {
   }
 }
 
-abstract class Register implements authtypes {
+abstract class Register implements AuthSuccess {
   const factory Register() = _$Register;
 }
 
@@ -152,7 +167,7 @@ abstract class $SigninCopyWith<$Res> {
       _$SigninCopyWithImpl<$Res>;
 }
 
-class _$SigninCopyWithImpl<$Res> extends _$authtypesCopyWithImpl<$Res>
+class _$SigninCopyWithImpl<$Res> extends _$AuthSuccessCopyWithImpl<$Res>
     implements $SigninCopyWith<$Res> {
   _$SigninCopyWithImpl(Signin _value, $Res Function(Signin) _then)
       : super(_value, (v) => _then(v as Signin));
@@ -166,7 +181,7 @@ class _$Signin implements Signin {
 
   @override
   String toString() {
-    return 'authtypes.signin()';
+    return 'AuthSuccess.signin()';
   }
 
   @override
@@ -182,9 +197,11 @@ class _$Signin implements Signin {
   Result when<Result extends Object>({
     @required Result register(),
     @required Result signin(),
+    @required Result googleSignin(),
   }) {
     assert(register != null);
     assert(signin != null);
+    assert(googleSignin != null);
     return signin();
   }
 
@@ -193,6 +210,7 @@ class _$Signin implements Signin {
   Result maybeWhen<Result extends Object>({
     Result register(),
     Result signin(),
+    Result googleSignin(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -207,9 +225,11 @@ class _$Signin implements Signin {
   Result map<Result extends Object>({
     @required Result register(Register value),
     @required Result signin(Signin value),
+    @required Result googleSignin(GoogleSignin value),
   }) {
     assert(register != null);
     assert(signin != null);
+    assert(googleSignin != null);
     return signin(this);
   }
 
@@ -218,6 +238,7 @@ class _$Signin implements Signin {
   Result maybeMap<Result extends Object>({
     Result register(Register value),
     Result signin(Signin value),
+    Result googleSignin(GoogleSignin value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -228,6 +249,99 @@ class _$Signin implements Signin {
   }
 }
 
-abstract class Signin implements authtypes {
+abstract class Signin implements AuthSuccess {
   const factory Signin() = _$Signin;
+}
+
+abstract class $GoogleSigninCopyWith<$Res> {
+  factory $GoogleSigninCopyWith(
+          GoogleSignin value, $Res Function(GoogleSignin) then) =
+      _$GoogleSigninCopyWithImpl<$Res>;
+}
+
+class _$GoogleSigninCopyWithImpl<$Res> extends _$AuthSuccessCopyWithImpl<$Res>
+    implements $GoogleSigninCopyWith<$Res> {
+  _$GoogleSigninCopyWithImpl(
+      GoogleSignin _value, $Res Function(GoogleSignin) _then)
+      : super(_value, (v) => _then(v as GoogleSignin));
+
+  @override
+  GoogleSignin get _value => super._value as GoogleSignin;
+}
+
+class _$GoogleSignin implements GoogleSignin {
+  const _$GoogleSignin();
+
+  @override
+  String toString() {
+    return 'AuthSuccess.googleSignin()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is GoogleSignin);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result register(),
+    @required Result signin(),
+    @required Result googleSignin(),
+  }) {
+    assert(register != null);
+    assert(signin != null);
+    assert(googleSignin != null);
+    return googleSignin();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result register(),
+    Result signin(),
+    Result googleSignin(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (googleSignin != null) {
+      return googleSignin();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result register(Register value),
+    @required Result signin(Signin value),
+    @required Result googleSignin(GoogleSignin value),
+  }) {
+    assert(register != null);
+    assert(signin != null);
+    assert(googleSignin != null);
+    return googleSignin(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result register(Register value),
+    Result signin(Signin value),
+    Result googleSignin(GoogleSignin value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (googleSignin != null) {
+      return googleSignin(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GoogleSignin implements AuthSuccess {
+  const factory GoogleSignin() = _$GoogleSignin;
 }

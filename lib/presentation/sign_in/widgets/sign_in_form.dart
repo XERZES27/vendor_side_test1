@@ -9,24 +9,6 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
         listener: (context, state) {
-      state.authFailureOrSuccessOptionGoogle.fold(
-          () {},
-          (either) => either.fold(
-              (l) => {
-                    FlushbarHelper.createError(
-                        message: l.maybeMap(
-                            canceledByUser: (_) => 'Canceled',
-                            orElse: () {
-                              return 'Canceled';
-                            })).show(context)
-                  },
-              (r) => {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => VerificationPage()),
-                    )
-                  }));
 
       state.authFailureOrSuccessOption.fold(
           () {},
@@ -42,14 +24,16 @@ class SignInForm extends StatelessWidget {
                             invalidEmailAndPasswordCombination: (_) =>
                                 'Invalid Email and Password Combination'))
                     .show(context);
-              }, (right) {
-                if (right.isRight()) {
-                } else if (right.isLeft()) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => VerificationPage()),
-                  );
-                }
+              }, (authSuccess) {
+                  authSuccess.map(
+                      register: (_)=>Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => VerificationPage()),
+                      ),
+                      signin: (_)=>const Text('SignIn'),
+                      googleSignin:  (_)=>const Text('googleSignIn'));
+
+
               }));
     }, builder: (context, state) {
       return Form(

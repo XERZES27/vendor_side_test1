@@ -6,8 +6,7 @@ abstract class SignInFormState with _$SignInFormState{
     @required EmailAddress emailAddress,
     @required Password password,
     @required bool isSubmitting, 
-    @required Option<Either<AuthFailure, Either<Register,Signin>>> authFailureOrSuccessOption,
-    @required Option<Either<AuthFailure,Unit>> authFailureOrSuccessOptionGoogle,
+    @required Option<Either<AuthFailure, AuthSuccess>> authFailureOrSuccessOption,
     @required bool showErrorMessages,
      }) = _SignInFormState;
 
@@ -16,7 +15,6 @@ abstract class SignInFormState with _$SignInFormState{
        password: Password(''),
        isSubmitting: false,
        authFailureOrSuccessOption: none(),
-       authFailureOrSuccessOptionGoogle:none(),
        showErrorMessages: false,
      );
 

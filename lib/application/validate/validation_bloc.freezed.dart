@@ -263,21 +263,43 @@ abstract class CreateDocumentForVendor implements ValidationEvent {
 class _$ValidationStateTearOff {
   const _$ValidationStateTearOff();
 
-  _ValidationState call(
-      {@required
-          bool creatingDocument,
-      @required
-          bool sendingEmailVerification,
-      @required
-          bool sendEmailVerification,
-      @required
-          Option<Either<ValidateFailure, Unit>> createDocumentForVendor}) {
-    return _ValidationState(
-      creatingDocument: creatingDocument,
-      sendingEmailVerification: sendingEmailVerification,
-      sendEmailVerification: sendEmailVerification,
-      createDocumentForVendor: createDocumentForVendor,
+  CreatingDocument creatingDocument({bool creating}) {
+    return CreatingDocument(
+      creating: creating,
     );
+  }
+
+  SendingEmailVerification sendingEmailVerification({bool sending}) {
+    return SendingEmailVerification(
+      sending: sending,
+    );
+  }
+
+  SendEmailVerification sendEmailVerification({bool sendVerification}) {
+    return SendEmailVerification(
+      sendVerification: sendVerification,
+    );
+  }
+
+  InitialState initialState() {
+    return const InitialState();
+  }
+
+  CreateDocumentforVendor createDocumentForVendor(
+      {Option<Either<ValidateFailure, Unit>> createDocument}) {
+    return CreateDocumentforVendor(
+      createDocument: createDocument,
+    );
+  }
+
+  WaitforTime waitForTime({int duration}) {
+    return WaitforTime(
+      duration: duration,
+    );
+  }
+
+  TryAgainSendingVerification tryAgainSendingVerification() {
+    return const TryAgainSendingVerification();
   }
 }
 
@@ -285,23 +307,58 @@ class _$ValidationStateTearOff {
 const $ValidationState = _$ValidationStateTearOff();
 
 mixin _$ValidationState {
-  bool get creatingDocument;
-  bool get sendingEmailVerification;
-  bool get sendEmailVerification;
-  Option<Either<ValidateFailure, Unit>> get createDocumentForVendor;
-
-  $ValidationStateCopyWith<ValidationState> get copyWith;
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  });
 }
 
 abstract class $ValidationStateCopyWith<$Res> {
   factory $ValidationStateCopyWith(
           ValidationState value, $Res Function(ValidationState) then) =
       _$ValidationStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool creatingDocument,
-      bool sendingEmailVerification,
-      bool sendEmailVerification,
-      Option<Either<ValidateFailure, Unit>> createDocumentForVendor});
 }
 
 class _$ValidationStateCopyWithImpl<$Res>
@@ -311,172 +368,1066 @@ class _$ValidationStateCopyWithImpl<$Res>
   final ValidationState _value;
   // ignore: unused_field
   final $Res Function(ValidationState) _then;
-
-  @override
-  $Res call({
-    Object creatingDocument = freezed,
-    Object sendingEmailVerification = freezed,
-    Object sendEmailVerification = freezed,
-    Object createDocumentForVendor = freezed,
-  }) {
-    return _then(_value.copyWith(
-      creatingDocument: creatingDocument == freezed
-          ? _value.creatingDocument
-          : creatingDocument as bool,
-      sendingEmailVerification: sendingEmailVerification == freezed
-          ? _value.sendingEmailVerification
-          : sendingEmailVerification as bool,
-      sendEmailVerification: sendEmailVerification == freezed
-          ? _value.sendEmailVerification
-          : sendEmailVerification as bool,
-      createDocumentForVendor: createDocumentForVendor == freezed
-          ? _value.createDocumentForVendor
-          : createDocumentForVendor as Option<Either<ValidateFailure, Unit>>,
-    ));
-  }
 }
 
-abstract class _$ValidationStateCopyWith<$Res>
-    implements $ValidationStateCopyWith<$Res> {
-  factory _$ValidationStateCopyWith(
-          _ValidationState value, $Res Function(_ValidationState) then) =
-      __$ValidationStateCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {bool creatingDocument,
-      bool sendingEmailVerification,
-      bool sendEmailVerification,
-      Option<Either<ValidateFailure, Unit>> createDocumentForVendor});
+abstract class $CreatingDocumentCopyWith<$Res> {
+  factory $CreatingDocumentCopyWith(
+          CreatingDocument value, $Res Function(CreatingDocument) then) =
+      _$CreatingDocumentCopyWithImpl<$Res>;
+  $Res call({bool creating});
 }
 
-class __$ValidationStateCopyWithImpl<$Res>
+class _$CreatingDocumentCopyWithImpl<$Res>
     extends _$ValidationStateCopyWithImpl<$Res>
-    implements _$ValidationStateCopyWith<$Res> {
-  __$ValidationStateCopyWithImpl(
-      _ValidationState _value, $Res Function(_ValidationState) _then)
-      : super(_value, (v) => _then(v as _ValidationState));
+    implements $CreatingDocumentCopyWith<$Res> {
+  _$CreatingDocumentCopyWithImpl(
+      CreatingDocument _value, $Res Function(CreatingDocument) _then)
+      : super(_value, (v) => _then(v as CreatingDocument));
 
   @override
-  _ValidationState get _value => super._value as _ValidationState;
+  CreatingDocument get _value => super._value as CreatingDocument;
 
   @override
   $Res call({
-    Object creatingDocument = freezed,
-    Object sendingEmailVerification = freezed,
-    Object sendEmailVerification = freezed,
-    Object createDocumentForVendor = freezed,
+    Object creating = freezed,
   }) {
-    return _then(_ValidationState(
-      creatingDocument: creatingDocument == freezed
-          ? _value.creatingDocument
-          : creatingDocument as bool,
-      sendingEmailVerification: sendingEmailVerification == freezed
-          ? _value.sendingEmailVerification
-          : sendingEmailVerification as bool,
-      sendEmailVerification: sendEmailVerification == freezed
-          ? _value.sendEmailVerification
-          : sendEmailVerification as bool,
-      createDocumentForVendor: createDocumentForVendor == freezed
-          ? _value.createDocumentForVendor
-          : createDocumentForVendor as Option<Either<ValidateFailure, Unit>>,
+    return _then(CreatingDocument(
+      creating: creating == freezed ? _value.creating : creating as bool,
     ));
   }
 }
 
-class _$_ValidationState
+class _$CreatingDocument
     with DiagnosticableTreeMixin
-    implements _ValidationState {
-  const _$_ValidationState(
-      {@required this.creatingDocument,
-      @required this.sendingEmailVerification,
-      @required this.sendEmailVerification,
-      @required this.createDocumentForVendor})
-      : assert(creatingDocument != null),
-        assert(sendingEmailVerification != null),
-        assert(sendEmailVerification != null),
-        assert(createDocumentForVendor != null);
+    implements CreatingDocument {
+  const _$CreatingDocument({this.creating});
 
   @override
-  final bool creatingDocument;
-  @override
-  final bool sendingEmailVerification;
-  @override
-  final bool sendEmailVerification;
-  @override
-  final Option<Either<ValidateFailure, Unit>> createDocumentForVendor;
+  final bool creating;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ValidationState(creatingDocument: $creatingDocument, sendingEmailVerification: $sendingEmailVerification, sendEmailVerification: $sendEmailVerification, createDocumentForVendor: $createDocumentForVendor)';
+    return 'ValidationState.creatingDocument(creating: $creating)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ValidationState'))
-      ..add(DiagnosticsProperty('creatingDocument', creatingDocument))
-      ..add(DiagnosticsProperty(
-          'sendingEmailVerification', sendingEmailVerification))
-      ..add(DiagnosticsProperty('sendEmailVerification', sendEmailVerification))
-      ..add(DiagnosticsProperty(
-          'createDocumentForVendor', createDocumentForVendor));
+      ..add(DiagnosticsProperty('type', 'ValidationState.creatingDocument'))
+      ..add(DiagnosticsProperty('creating', creating));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ValidationState &&
-            (identical(other.creatingDocument, creatingDocument) ||
+        (other is CreatingDocument &&
+            (identical(other.creating, creating) ||
                 const DeepCollectionEquality()
-                    .equals(other.creatingDocument, creatingDocument)) &&
-            (identical(
-                    other.sendingEmailVerification, sendingEmailVerification) ||
-                const DeepCollectionEquality().equals(
-                    other.sendingEmailVerification,
-                    sendingEmailVerification)) &&
-            (identical(other.sendEmailVerification, sendEmailVerification) ||
-                const DeepCollectionEquality().equals(
-                    other.sendEmailVerification, sendEmailVerification)) &&
-            (identical(
-                    other.createDocumentForVendor, createDocumentForVendor) ||
-                const DeepCollectionEquality().equals(
-                    other.createDocumentForVendor, createDocumentForVendor)));
+                    .equals(other.creating, creating)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(creating);
+
+  @override
+  $CreatingDocumentCopyWith<CreatingDocument> get copyWith =>
+      _$CreatingDocumentCopyWithImpl<CreatingDocument>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return creatingDocument(creating);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (creatingDocument != null) {
+      return creatingDocument(creating);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return creatingDocument(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (creatingDocument != null) {
+      return creatingDocument(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreatingDocument implements ValidationState {
+  const factory CreatingDocument({bool creating}) = _$CreatingDocument;
+
+  bool get creating;
+  $CreatingDocumentCopyWith<CreatingDocument> get copyWith;
+}
+
+abstract class $SendingEmailVerificationCopyWith<$Res> {
+  factory $SendingEmailVerificationCopyWith(SendingEmailVerification value,
+          $Res Function(SendingEmailVerification) then) =
+      _$SendingEmailVerificationCopyWithImpl<$Res>;
+  $Res call({bool sending});
+}
+
+class _$SendingEmailVerificationCopyWithImpl<$Res>
+    extends _$ValidationStateCopyWithImpl<$Res>
+    implements $SendingEmailVerificationCopyWith<$Res> {
+  _$SendingEmailVerificationCopyWithImpl(SendingEmailVerification _value,
+      $Res Function(SendingEmailVerification) _then)
+      : super(_value, (v) => _then(v as SendingEmailVerification));
+
+  @override
+  SendingEmailVerification get _value =>
+      super._value as SendingEmailVerification;
+
+  @override
+  $Res call({
+    Object sending = freezed,
+  }) {
+    return _then(SendingEmailVerification(
+      sending: sending == freezed ? _value.sending : sending as bool,
+    ));
+  }
+}
+
+class _$SendingEmailVerification
+    with DiagnosticableTreeMixin
+    implements SendingEmailVerification {
+  const _$SendingEmailVerification({this.sending});
+
+  @override
+  final bool sending;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValidationState.sendingEmailVerification(sending: $sending)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValidationState.sendingEmailVerification'))
+      ..add(DiagnosticsProperty('sending', sending));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SendingEmailVerification &&
+            (identical(other.sending, sending) ||
+                const DeepCollectionEquality().equals(other.sending, sending)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(sending);
+
+  @override
+  $SendingEmailVerificationCopyWith<SendingEmailVerification> get copyWith =>
+      _$SendingEmailVerificationCopyWithImpl<SendingEmailVerification>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return sendingEmailVerification(sending);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sendingEmailVerification != null) {
+      return sendingEmailVerification(sending);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return sendingEmailVerification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sendingEmailVerification != null) {
+      return sendingEmailVerification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SendingEmailVerification implements ValidationState {
+  const factory SendingEmailVerification({bool sending}) =
+      _$SendingEmailVerification;
+
+  bool get sending;
+  $SendingEmailVerificationCopyWith<SendingEmailVerification> get copyWith;
+}
+
+abstract class $SendEmailVerificationCopyWith<$Res> {
+  factory $SendEmailVerificationCopyWith(SendEmailVerification value,
+          $Res Function(SendEmailVerification) then) =
+      _$SendEmailVerificationCopyWithImpl<$Res>;
+  $Res call({bool sendVerification});
+}
+
+class _$SendEmailVerificationCopyWithImpl<$Res>
+    extends _$ValidationStateCopyWithImpl<$Res>
+    implements $SendEmailVerificationCopyWith<$Res> {
+  _$SendEmailVerificationCopyWithImpl(
+      SendEmailVerification _value, $Res Function(SendEmailVerification) _then)
+      : super(_value, (v) => _then(v as SendEmailVerification));
+
+  @override
+  SendEmailVerification get _value => super._value as SendEmailVerification;
+
+  @override
+  $Res call({
+    Object sendVerification = freezed,
+  }) {
+    return _then(SendEmailVerification(
+      sendVerification: sendVerification == freezed
+          ? _value.sendVerification
+          : sendVerification as bool,
+    ));
+  }
+}
+
+class _$SendEmailVerification
+    with DiagnosticableTreeMixin
+    implements SendEmailVerification {
+  const _$SendEmailVerification({this.sendVerification});
+
+  @override
+  final bool sendVerification;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValidationState.sendEmailVerification(sendVerification: $sendVerification)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ValidationState.sendEmailVerification'))
+      ..add(DiagnosticsProperty('sendVerification', sendVerification));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SendEmailVerification &&
+            (identical(other.sendVerification, sendVerification) ||
+                const DeepCollectionEquality()
+                    .equals(other.sendVerification, sendVerification)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(creatingDocument) ^
-      const DeepCollectionEquality().hash(sendingEmailVerification) ^
-      const DeepCollectionEquality().hash(sendEmailVerification) ^
-      const DeepCollectionEquality().hash(createDocumentForVendor);
+      const DeepCollectionEquality().hash(sendVerification);
 
   @override
-  _$ValidationStateCopyWith<_ValidationState> get copyWith =>
-      __$ValidationStateCopyWithImpl<_ValidationState>(this, _$identity);
+  $SendEmailVerificationCopyWith<SendEmailVerification> get copyWith =>
+      _$SendEmailVerificationCopyWithImpl<SendEmailVerification>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return sendEmailVerification(sendVerification);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sendEmailVerification != null) {
+      return sendEmailVerification(sendVerification);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return sendEmailVerification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sendEmailVerification != null) {
+      return sendEmailVerification(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _ValidationState implements ValidationState {
-  const factory _ValidationState(
-          {@required
-              bool creatingDocument,
-          @required
-              bool sendingEmailVerification,
-          @required
-              bool sendEmailVerification,
-          @required
-              Option<Either<ValidateFailure, Unit>> createDocumentForVendor}) =
-      _$_ValidationState;
+abstract class SendEmailVerification implements ValidationState {
+  const factory SendEmailVerification({bool sendVerification}) =
+      _$SendEmailVerification;
+
+  bool get sendVerification;
+  $SendEmailVerificationCopyWith<SendEmailVerification> get copyWith;
+}
+
+abstract class $InitialStateCopyWith<$Res> {
+  factory $InitialStateCopyWith(
+          InitialState value, $Res Function(InitialState) then) =
+      _$InitialStateCopyWithImpl<$Res>;
+}
+
+class _$InitialStateCopyWithImpl<$Res>
+    extends _$ValidationStateCopyWithImpl<$Res>
+    implements $InitialStateCopyWith<$Res> {
+  _$InitialStateCopyWithImpl(
+      InitialState _value, $Res Function(InitialState) _then)
+      : super(_value, (v) => _then(v as InitialState));
 
   @override
-  bool get creatingDocument;
+  InitialState get _value => super._value as InitialState;
+}
+
+class _$InitialState with DiagnosticableTreeMixin implements InitialState {
+  const _$InitialState();
+
   @override
-  bool get sendingEmailVerification;
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValidationState.initialState()';
+  }
+
   @override
-  bool get sendEmailVerification;
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValidationState.initialState'));
+  }
+
   @override
-  Option<Either<ValidateFailure, Unit>> get createDocumentForVendor;
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InitialState);
+  }
+
   @override
-  _$ValidationStateCopyWith<_ValidationState> get copyWith;
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return initialState();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialState != null) {
+      return initialState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return initialState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (initialState != null) {
+      return initialState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitialState implements ValidationState {
+  const factory InitialState() = _$InitialState;
+}
+
+abstract class $CreateDocumentforVendorCopyWith<$Res> {
+  factory $CreateDocumentforVendorCopyWith(CreateDocumentforVendor value,
+          $Res Function(CreateDocumentforVendor) then) =
+      _$CreateDocumentforVendorCopyWithImpl<$Res>;
+  $Res call({Option<Either<ValidateFailure, Unit>> createDocument});
+}
+
+class _$CreateDocumentforVendorCopyWithImpl<$Res>
+    extends _$ValidationStateCopyWithImpl<$Res>
+    implements $CreateDocumentforVendorCopyWith<$Res> {
+  _$CreateDocumentforVendorCopyWithImpl(CreateDocumentforVendor _value,
+      $Res Function(CreateDocumentforVendor) _then)
+      : super(_value, (v) => _then(v as CreateDocumentforVendor));
+
+  @override
+  CreateDocumentforVendor get _value => super._value as CreateDocumentforVendor;
+
+  @override
+  $Res call({
+    Object createDocument = freezed,
+  }) {
+    return _then(CreateDocumentforVendor(
+      createDocument: createDocument == freezed
+          ? _value.createDocument
+          : createDocument as Option<Either<ValidateFailure, Unit>>,
+    ));
+  }
+}
+
+class _$CreateDocumentforVendor
+    with DiagnosticableTreeMixin
+    implements CreateDocumentforVendor {
+  const _$CreateDocumentforVendor({this.createDocument});
+
+  @override
+  final Option<Either<ValidateFailure, Unit>> createDocument;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValidationState.createDocumentForVendor(createDocument: $createDocument)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValidationState.createDocumentForVendor'))
+      ..add(DiagnosticsProperty('createDocument', createDocument));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CreateDocumentforVendor &&
+            (identical(other.createDocument, createDocument) ||
+                const DeepCollectionEquality()
+                    .equals(other.createDocument, createDocument)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(createDocument);
+
+  @override
+  $CreateDocumentforVendorCopyWith<CreateDocumentforVendor> get copyWith =>
+      _$CreateDocumentforVendorCopyWithImpl<CreateDocumentforVendor>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return createDocumentForVendor(createDocument);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (createDocumentForVendor != null) {
+      return createDocumentForVendor(createDocument);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return createDocumentForVendor(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (createDocumentForVendor != null) {
+      return createDocumentForVendor(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateDocumentforVendor implements ValidationState {
+  const factory CreateDocumentforVendor(
+          {Option<Either<ValidateFailure, Unit>> createDocument}) =
+      _$CreateDocumentforVendor;
+
+  Option<Either<ValidateFailure, Unit>> get createDocument;
+  $CreateDocumentforVendorCopyWith<CreateDocumentforVendor> get copyWith;
+}
+
+abstract class $WaitforTimeCopyWith<$Res> {
+  factory $WaitforTimeCopyWith(
+          WaitforTime value, $Res Function(WaitforTime) then) =
+      _$WaitforTimeCopyWithImpl<$Res>;
+  $Res call({int duration});
+}
+
+class _$WaitforTimeCopyWithImpl<$Res>
+    extends _$ValidationStateCopyWithImpl<$Res>
+    implements $WaitforTimeCopyWith<$Res> {
+  _$WaitforTimeCopyWithImpl(
+      WaitforTime _value, $Res Function(WaitforTime) _then)
+      : super(_value, (v) => _then(v as WaitforTime));
+
+  @override
+  WaitforTime get _value => super._value as WaitforTime;
+
+  @override
+  $Res call({
+    Object duration = freezed,
+  }) {
+    return _then(WaitforTime(
+      duration: duration == freezed ? _value.duration : duration as int,
+    ));
+  }
+}
+
+class _$WaitforTime with DiagnosticableTreeMixin implements WaitforTime {
+  const _$WaitforTime({this.duration});
+
+  @override
+  final int duration;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValidationState.waitForTime(duration: $duration)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ValidationState.waitForTime'))
+      ..add(DiagnosticsProperty('duration', duration));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is WaitforTime &&
+            (identical(other.duration, duration) ||
+                const DeepCollectionEquality()
+                    .equals(other.duration, duration)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(duration);
+
+  @override
+  $WaitforTimeCopyWith<WaitforTime> get copyWith =>
+      _$WaitforTimeCopyWithImpl<WaitforTime>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return waitForTime(duration);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (waitForTime != null) {
+      return waitForTime(duration);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return waitForTime(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (waitForTime != null) {
+      return waitForTime(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WaitforTime implements ValidationState {
+  const factory WaitforTime({int duration}) = _$WaitforTime;
+
+  int get duration;
+  $WaitforTimeCopyWith<WaitforTime> get copyWith;
+}
+
+abstract class $TryAgainSendingVerificationCopyWith<$Res> {
+  factory $TryAgainSendingVerificationCopyWith(
+          TryAgainSendingVerification value,
+          $Res Function(TryAgainSendingVerification) then) =
+      _$TryAgainSendingVerificationCopyWithImpl<$Res>;
+}
+
+class _$TryAgainSendingVerificationCopyWithImpl<$Res>
+    extends _$ValidationStateCopyWithImpl<$Res>
+    implements $TryAgainSendingVerificationCopyWith<$Res> {
+  _$TryAgainSendingVerificationCopyWithImpl(TryAgainSendingVerification _value,
+      $Res Function(TryAgainSendingVerification) _then)
+      : super(_value, (v) => _then(v as TryAgainSendingVerification));
+
+  @override
+  TryAgainSendingVerification get _value =>
+      super._value as TryAgainSendingVerification;
+}
+
+class _$TryAgainSendingVerification
+    with DiagnosticableTreeMixin
+    implements TryAgainSendingVerification {
+  const _$TryAgainSendingVerification();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ValidationState.tryAgainSendingVerification()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ValidationState.tryAgainSendingVerification'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is TryAgainSendingVerification);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result creatingDocument(bool creating),
+    @required Result sendingEmailVerification(bool sending),
+    @required Result sendEmailVerification(bool sendVerification),
+    @required Result initialState(),
+    @required
+        Result createDocumentForVendor(
+            Option<Either<ValidateFailure, Unit>> createDocument),
+    @required Result waitForTime(int duration),
+    @required Result tryAgainSendingVerification(),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return tryAgainSendingVerification();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result creatingDocument(bool creating),
+    Result sendingEmailVerification(bool sending),
+    Result sendEmailVerification(bool sendVerification),
+    Result initialState(),
+    Result createDocumentForVendor(
+        Option<Either<ValidateFailure, Unit>> createDocument),
+    Result waitForTime(int duration),
+    Result tryAgainSendingVerification(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tryAgainSendingVerification != null) {
+      return tryAgainSendingVerification();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result creatingDocument(CreatingDocument value),
+    @required Result sendingEmailVerification(SendingEmailVerification value),
+    @required Result sendEmailVerification(SendEmailVerification value),
+    @required Result initialState(InitialState value),
+    @required Result createDocumentForVendor(CreateDocumentforVendor value),
+    @required Result waitForTime(WaitforTime value),
+    @required
+        Result tryAgainSendingVerification(TryAgainSendingVerification value),
+  }) {
+    assert(creatingDocument != null);
+    assert(sendingEmailVerification != null);
+    assert(sendEmailVerification != null);
+    assert(initialState != null);
+    assert(createDocumentForVendor != null);
+    assert(waitForTime != null);
+    assert(tryAgainSendingVerification != null);
+    return tryAgainSendingVerification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result creatingDocument(CreatingDocument value),
+    Result sendingEmailVerification(SendingEmailVerification value),
+    Result sendEmailVerification(SendEmailVerification value),
+    Result initialState(InitialState value),
+    Result createDocumentForVendor(CreateDocumentforVendor value),
+    Result waitForTime(WaitforTime value),
+    Result tryAgainSendingVerification(TryAgainSendingVerification value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (tryAgainSendingVerification != null) {
+      return tryAgainSendingVerification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TryAgainSendingVerification implements ValidationState {
+  const factory TryAgainSendingVerification() = _$TryAgainSendingVerification;
 }

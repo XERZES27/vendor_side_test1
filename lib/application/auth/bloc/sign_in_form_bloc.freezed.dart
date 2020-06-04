@@ -777,10 +777,7 @@ class _$SignInFormStateTearOff {
       @required
           bool isSubmitting,
       @required
-          Option<Either<AuthFailure, Either<dynamic, dynamic>>>
-              authFailureOrSuccessOption,
-      @required
-          Option<Either<AuthFailure, Unit>> authFailureOrSuccessOptionGoogle,
+          Option<Either<AuthFailure, AuthSuccess>> authFailureOrSuccessOption,
       @required
           bool showErrorMessages}) {
     return _SignInFormState(
@@ -788,7 +785,6 @@ class _$SignInFormStateTearOff {
       password: password,
       isSubmitting: isSubmitting,
       authFailureOrSuccessOption: authFailureOrSuccessOption,
-      authFailureOrSuccessOptionGoogle: authFailureOrSuccessOptionGoogle,
       showErrorMessages: showErrorMessages,
     );
   }
@@ -801,9 +797,7 @@ mixin _$SignInFormState {
   EmailAddress get emailAddress;
   Password get password;
   bool get isSubmitting;
-  Option<Either<AuthFailure, Either<dynamic, dynamic>>>
-      get authFailureOrSuccessOption;
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOptionGoogle;
+  Option<Either<AuthFailure, AuthSuccess>> get authFailureOrSuccessOption;
   bool get showErrorMessages;
 
   $SignInFormStateCopyWith<SignInFormState> get copyWith;
@@ -817,9 +811,7 @@ abstract class $SignInFormStateCopyWith<$Res> {
       {EmailAddress emailAddress,
       Password password,
       bool isSubmitting,
-      Option<Either<AuthFailure, Either<dynamic, dynamic>>>
-          authFailureOrSuccessOption,
-      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOptionGoogle,
+      Option<Either<AuthFailure, AuthSuccess>> authFailureOrSuccessOption,
       bool showErrorMessages});
 }
 
@@ -837,7 +829,6 @@ class _$SignInFormStateCopyWithImpl<$Res>
     Object password = freezed,
     Object isSubmitting = freezed,
     Object authFailureOrSuccessOption = freezed,
-    Object authFailureOrSuccessOptionGoogle = freezed,
     Object showErrorMessages = freezed,
   }) {
     return _then(_value.copyWith(
@@ -850,12 +841,7 @@ class _$SignInFormStateCopyWithImpl<$Res>
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption
-              as Option<Either<AuthFailure, Either<dynamic, dynamic>>>,
-      authFailureOrSuccessOptionGoogle:
-          authFailureOrSuccessOptionGoogle == freezed
-              ? _value.authFailureOrSuccessOptionGoogle
-              : authFailureOrSuccessOptionGoogle
-                  as Option<Either<AuthFailure, Unit>>,
+              as Option<Either<AuthFailure, AuthSuccess>>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -873,9 +859,7 @@ abstract class _$SignInFormStateCopyWith<$Res>
       {EmailAddress emailAddress,
       Password password,
       bool isSubmitting,
-      Option<Either<AuthFailure, Either<dynamic, dynamic>>>
-          authFailureOrSuccessOption,
-      Option<Either<AuthFailure, Unit>> authFailureOrSuccessOptionGoogle,
+      Option<Either<AuthFailure, AuthSuccess>> authFailureOrSuccessOption,
       bool showErrorMessages});
 }
 
@@ -895,7 +879,6 @@ class __$SignInFormStateCopyWithImpl<$Res>
     Object password = freezed,
     Object isSubmitting = freezed,
     Object authFailureOrSuccessOption = freezed,
-    Object authFailureOrSuccessOptionGoogle = freezed,
     Object showErrorMessages = freezed,
   }) {
     return _then(_SignInFormState(
@@ -908,12 +891,7 @@ class __$SignInFormStateCopyWithImpl<$Res>
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption
-              as Option<Either<AuthFailure, Either<dynamic, dynamic>>>,
-      authFailureOrSuccessOptionGoogle:
-          authFailureOrSuccessOptionGoogle == freezed
-              ? _value.authFailureOrSuccessOptionGoogle
-              : authFailureOrSuccessOptionGoogle
-                  as Option<Either<AuthFailure, Unit>>,
+              as Option<Either<AuthFailure, AuthSuccess>>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -929,13 +907,11 @@ class _$_SignInFormState
       @required this.password,
       @required this.isSubmitting,
       @required this.authFailureOrSuccessOption,
-      @required this.authFailureOrSuccessOptionGoogle,
       @required this.showErrorMessages})
       : assert(emailAddress != null),
         assert(password != null),
         assert(isSubmitting != null),
         assert(authFailureOrSuccessOption != null),
-        assert(authFailureOrSuccessOptionGoogle != null),
         assert(showErrorMessages != null);
 
   @override
@@ -945,16 +921,13 @@ class _$_SignInFormState
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<AuthFailure, Either<dynamic, dynamic>>>
-      authFailureOrSuccessOption;
-  @override
-  final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOptionGoogle;
+  final Option<Either<AuthFailure, AuthSuccess>> authFailureOrSuccessOption;
   @override
   final bool showErrorMessages;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignInFormState(emailAddress: $emailAddress, password: $password, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption, authFailureOrSuccessOptionGoogle: $authFailureOrSuccessOptionGoogle, showErrorMessages: $showErrorMessages)';
+    return 'SignInFormState(emailAddress: $emailAddress, password: $password, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption, showErrorMessages: $showErrorMessages)';
   }
 
   @override
@@ -967,8 +940,6 @@ class _$_SignInFormState
       ..add(DiagnosticsProperty('isSubmitting', isSubmitting))
       ..add(DiagnosticsProperty(
           'authFailureOrSuccessOption', authFailureOrSuccessOption))
-      ..add(DiagnosticsProperty(
-          'authFailureOrSuccessOptionGoogle', authFailureOrSuccessOptionGoogle))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages));
   }
 
@@ -990,11 +961,6 @@ class _$_SignInFormState
                 const DeepCollectionEquality().equals(
                     other.authFailureOrSuccessOption,
                     authFailureOrSuccessOption)) &&
-            (identical(other.authFailureOrSuccessOptionGoogle,
-                    authFailureOrSuccessOptionGoogle) ||
-                const DeepCollectionEquality().equals(
-                    other.authFailureOrSuccessOptionGoogle,
-                    authFailureOrSuccessOptionGoogle)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)));
@@ -1007,7 +973,6 @@ class _$_SignInFormState
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(authFailureOrSuccessOption) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOptionGoogle) ^
       const DeepCollectionEquality().hash(showErrorMessages);
 
   @override
@@ -1024,10 +989,7 @@ abstract class _SignInFormState implements SignInFormState {
       @required
           bool isSubmitting,
       @required
-          Option<Either<AuthFailure, Either<dynamic, dynamic>>>
-              authFailureOrSuccessOption,
-      @required
-          Option<Either<AuthFailure, Unit>> authFailureOrSuccessOptionGoogle,
+          Option<Either<AuthFailure, AuthSuccess>> authFailureOrSuccessOption,
       @required
           bool showErrorMessages}) = _$_SignInFormState;
 
@@ -1038,10 +1000,7 @@ abstract class _SignInFormState implements SignInFormState {
   @override
   bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Either<dynamic, dynamic>>>
-      get authFailureOrSuccessOption;
-  @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOptionGoogle;
+  Option<Either<AuthFailure, AuthSuccess>> get authFailureOrSuccessOption;
   @override
   bool get showErrorMessages;
   @override

@@ -11,7 +11,7 @@ import 'package:vendorsidetest1/domain/auth/auth_types/authtypes.dart';
 
 abstract class IAuthFacade{
   Future<Option<User>> getSignedInUser();
-  Future<Either<AuthFailure,Either<Register,Signin>>> registerWithEmailAndPassword({
+  Future<Either<AuthFailure,AuthSuccess>> registerWithEmailAndPassword({
     @required  EmailAddress emailAddress,
     @required  Password password,
     });
@@ -19,13 +19,13 @@ abstract class IAuthFacade{
   Future<bool> isVendor();
   Future<Either<ValidateFailure,Unit>> createDocumentForVerifiedVendorCallable(String name);
 
-    Future<Either<AuthFailure,Either<Register,Signin>>> signInEmailAndPassword({
+    Future<Either<AuthFailure,AuthSuccess>> signInEmailAndPassword({
     @required  EmailAddress emailAddress,
     @required  Password password,
     });
     Future<bool> isVerified();
 
-    Future<Either<AuthFailure,Unit>> signInWithGoogle();
+    Future<Either<AuthFailure,AuthSuccess>> signInWithGoogle();
     Future<void> signOut();
 
 }
