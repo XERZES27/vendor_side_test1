@@ -10,16 +10,12 @@ abstract class SignInFormState with _$SignInFormState{
     @required bool showErrorMessages,
      }) = _SignInFormState;
 
-     factory SignInFormState.initial() => SignInFormState(
-       emailAddress: EmailAddress(''),
-       password: Password(''),
-       isSubmitting: false,
-       authFailureOrSuccessOption: none(),
-       showErrorMessages: false,
-     );
-
-
-
-
+  factory SignInFormState.initial() => SignInFormState(
+    emailAddress: EmailAddress(''),
+    password: Password(''),
+    isSubmitting: false,
+    authFailureOrSuccessOption: none(),
+    showErrorMessages: false,
+  );
 }
 

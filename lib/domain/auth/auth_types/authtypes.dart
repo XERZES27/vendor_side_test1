@@ -3,8 +3,7 @@ part 'authtypes.freezed.dart';
 
 @freezed
 abstract class AuthSuccess with _$AuthSuccess{
-    const factory AuthSuccess.register() = Register;
-    const factory AuthSuccess.signin() = Signin;
-    const factory AuthSuccess.googleSignin() = GoogleSignin;
-
+  const factory AuthSuccess.register() = Register;
+  const factory AuthSuccess.signin() = Signin;
+  const factory AuthSuccess.googleSignin() = GoogleSignin;
 }
