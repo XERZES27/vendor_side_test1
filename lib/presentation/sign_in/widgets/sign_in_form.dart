@@ -2,6 +2,8 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vendorsidetest1/application/auth/bloc/sign_in_form_bloc.dart';
+import 'package:auto_route/auto_route.dart';
+import 'package:vendorsidetest1/presentation/routes/router.gr.dart';
 import 'package:vendorsidetest1/presentation/sign_in/widgets/verification_widgets/verification_waiting_page.dart';
 
 class SignInForm extends StatelessWidget {
@@ -26,10 +28,7 @@ class SignInForm extends StatelessWidget {
                     .show(context);
               }, (authSuccess) {
                   authSuccess.map(
-                      register: (_)=>Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => VerificationPage()),
-                      ),
+                      register:(_)=> ExtendedNavigator.of(context).pushReplacementNamed(Routes.verificationPage),
                       signin: (_)=>const Text('SignIn'),
                       googleSignin:  (_)=>const Text('googleSignIn'));
 

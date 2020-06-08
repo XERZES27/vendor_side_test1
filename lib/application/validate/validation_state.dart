@@ -10,4 +10,5 @@ abstract class ValidationState with _$ValidationState {
   const factory ValidationState.createDocumentForVendor({Option<Either<ValidateFailure, Unit>> createDocument}) = CreateDocumentforVendor;
   const factory ValidationState.waitForTime({int duration}) = WaitforTime;
   const factory ValidationState.tryAgainSendingVerification() = TryAgainSendingVerification;
+
 }

@@ -51,6 +51,7 @@ class ValidationBloc extends Bloc<ValidationEvent, ValidationState> {
 
 //          final bool emailVerificationIsSent =
 //          await _authFacade.sendVerificationEmail();
+
             yield const ValidationState.sendingEmailVerification(sending: false);
             yield const ValidationState.sendEmailVerification(
                 sendVerification: true);
@@ -94,9 +95,6 @@ class ValidationBloc extends Bloc<ValidationEvent, ValidationState> {
                 yield const ValidationState.tryAgainSendingVerification();
                 print("write Didn't happen");
                 }
-
-
-
             }
             else{
 

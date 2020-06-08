@@ -70,6 +70,8 @@ class FirebaseAuthFacade implements IAuthFacade {
           idToken: googleAuthentication.idToken,
           accessToken: googleAuthentication.accessToken);
 
+
+
       return _firebaseAuth.signInWithCredential(authCredential).then((value) {
         return right(const AuthSuccess.googleSignin());
       });
@@ -159,6 +161,8 @@ class FirebaseAuthFacade implements IAuthFacade {
 
     return isEmailVerified;
   }
+
+
 
   @override
   Future<bool> isVendor() async {
