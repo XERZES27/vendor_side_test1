@@ -11,7 +11,6 @@ class SignInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
         listener: (context, state) {
-
       state.authFailureOrSuccessOption.fold(
           () {},
           (either) => either.fold((failure) {
@@ -27,12 +26,22 @@ class SignInForm extends StatelessWidget {
                                 'Invalid Email and Password Combination'))
                     .show(context);
               }, (authSuccess) {
-                  authSuccess.map(
-                      register:(_)=> ExtendedNavigator.of(context).pushReplacementNamed(Routes.verificationPage),
-                      signin: (_)=>const Text('SignIn'),
-                      googleSignin:  (_)=>const Text('googleSignIn'));
-
-
+                authSuccess.map(
+                    register: (_) =>
+                        ExtendedNavigator.of(context).pushVerificationPage(),
+                    signin: (isVerified) => {
+                          if (isVerified.isVerified)
+                            {
+                              ExtendedNavigator.of(context)
+                                  .pushCreateProductPage()
+                            }
+                          else
+                            {
+                              ExtendedNavigator.of(context)
+                                  .pushVerificationPage(),
+                            }
+                        },
+                    googleSignin: (_) => const Text('googleSignIn'));
               }));
     }, builder: (context, state) {
       return Form(

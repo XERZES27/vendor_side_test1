@@ -5,7 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:vendorsidetest1/domain/auth/i_auth_facade.dart';
 import 'package:injectable/injectable.dart';
 
-
 part 'auth_event.dart';
 part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
@@ -13,28 +12,24 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final IAuthFacade _authFacade;
-  AuthBloc(this._authFacade);
+  AuthBloc(this._authFacade) : super(const AuthState.initial());
   @override
-  AuthState get initialState =>const AuthState.initial();
+  AuthState get initialState => const AuthState.initial();
 
   @override
   Stream<AuthState> mapEventToState(
     AuthEvent event,
   ) async* {
-    yield* event.map(
-        authCheckRequested: (e) async*{
-          final userOption = await _authFacade.getSignedInUser();
-          yield userOption.fold(
+    yield* event.map(authCheckRequested: (e) async* {
+      final userOption = await _authFacade.getSignedInUser();
+      yield userOption.fold(
           () => const AuthState.unauthenticated(),
-          (value) => value.isVerified?const AuthState.authenticatedVerified():const AuthState.authenticatedUnVerified()
-                  );
-
-
-        },
-        signOut:(e)async*{
-          await _authFacade.signOut();
-          yield const AuthState.unauthenticated();
-        }
-    );
+          (value) => value.isVerified
+              ? const AuthState.authenticatedVerified()
+              : const AuthState.authenticatedUnVerified());
+    }, signOut: (e) async* {
+      await _authFacade.signOut();
+      yield const AuthState.unauthenticated();
+    });
   }
 }

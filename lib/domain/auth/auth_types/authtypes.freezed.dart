@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'authtypes.dart';
 
@@ -12,14 +12,19 @@ T _$identity<T>(T value) => value;
 class _$AuthSuccessTearOff {
   const _$AuthSuccessTearOff();
 
+// ignore: unused_element
   Register register() {
     return const Register();
   }
 
-  Signin signin() {
-    return const Signin();
+// ignore: unused_element
+  Signin signin({bool isVerified}) {
+    return Signin(
+      isVerified: isVerified,
+    );
   }
 
+// ignore: unused_element
   GoogleSignin googleSignin() {
     return const GoogleSignin();
   }
@@ -32,13 +37,13 @@ mixin _$AuthSuccess {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result register(),
-    @required Result signin(),
+    @required Result signin(bool isVerified),
     @required Result googleSignin(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result register(),
-    Result signin(),
+    Result signin(bool isVerified),
     Result googleSignin(),
     @required Result orElse(),
   });
@@ -105,7 +110,7 @@ class _$Register implements Register {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result register(),
-    @required Result signin(),
+    @required Result signin(bool isVerified),
     @required Result googleSignin(),
   }) {
     assert(register != null);
@@ -118,7 +123,7 @@ class _$Register implements Register {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result register(),
-    Result signin(),
+    Result signin(bool isVerified),
     Result googleSignin(),
     @required Result orElse(),
   }) {
@@ -165,6 +170,7 @@ abstract class Register implements AuthSuccess {
 abstract class $SigninCopyWith<$Res> {
   factory $SigninCopyWith(Signin value, $Res Function(Signin) then) =
       _$SigninCopyWithImpl<$Res>;
+  $Res call({bool isVerified});
 }
 
 class _$SigninCopyWithImpl<$Res> extends _$AuthSuccessCopyWithImpl<$Res>
@@ -174,48 +180,70 @@ class _$SigninCopyWithImpl<$Res> extends _$AuthSuccessCopyWithImpl<$Res>
 
   @override
   Signin get _value => super._value as Signin;
+
+  @override
+  $Res call({
+    Object isVerified = freezed,
+  }) {
+    return _then(Signin(
+      isVerified:
+          isVerified == freezed ? _value.isVerified : isVerified as bool,
+    ));
+  }
 }
 
 class _$Signin implements Signin {
-  const _$Signin();
+  const _$Signin({this.isVerified});
+
+  @override
+  final bool isVerified;
 
   @override
   String toString() {
-    return 'AuthSuccess.signin()';
+    return 'AuthSuccess.signin(isVerified: $isVerified)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Signin);
+    return identical(this, other) ||
+        (other is Signin &&
+            (identical(other.isVerified, isVerified) ||
+                const DeepCollectionEquality()
+                    .equals(other.isVerified, isVerified)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isVerified);
+
+  @override
+  $SigninCopyWith<Signin> get copyWith =>
+      _$SigninCopyWithImpl<Signin>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result register(),
-    @required Result signin(),
+    @required Result signin(bool isVerified),
     @required Result googleSignin(),
   }) {
     assert(register != null);
     assert(signin != null);
     assert(googleSignin != null);
-    return signin();
+    return signin(isVerified);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result register(),
-    Result signin(),
+    Result signin(bool isVerified),
     Result googleSignin(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (signin != null) {
-      return signin();
+      return signin(isVerified);
     }
     return orElse();
   }
@@ -250,7 +278,10 @@ class _$Signin implements Signin {
 }
 
 abstract class Signin implements AuthSuccess {
-  const factory Signin() = _$Signin;
+  const factory Signin({bool isVerified}) = _$Signin;
+
+  bool get isVerified;
+  $SigninCopyWith<Signin> get copyWith;
 }
 
 abstract class $GoogleSigninCopyWith<$Res> {
@@ -289,7 +320,7 @@ class _$GoogleSignin implements GoogleSignin {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result register(),
-    @required Result signin(),
+    @required Result signin(bool isVerified),
     @required Result googleSignin(),
   }) {
     assert(register != null);
@@ -302,7 +333,7 @@ class _$GoogleSignin implements GoogleSignin {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result register(),
-    Result signin(),
+    Result signin(bool isVerified),
     Result googleSignin(),
     @required Result orElse(),
   }) {

@@ -19,7 +19,8 @@ part 'sign_in_form_state.dart';
 @injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final IAuthFacade _authFacade;
-  SignInFormBloc(this._authFacade);
+
+  SignInFormBloc(this._authFacade) : super(SignInFormState.initial());
 
   @override
   SignInFormState get initialState => SignInFormState.initial();
@@ -71,8 +72,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     final isPasswordValid = state.password.isValid();
     if (isEmailValid && isPasswordValid) {
       yield state.copyWith(
-          isSubmitting: true,
-          authFailureOrSuccessOption: none());
+          isSubmitting: true, authFailureOrSuccessOption: none());
       failureOrSuccess = await forwardedCall(
           emailAddress: state.emailAddress, password: state.password);
     }

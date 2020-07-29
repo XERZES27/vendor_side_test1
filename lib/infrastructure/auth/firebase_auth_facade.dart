@@ -12,18 +12,18 @@ import 'package:vendorsidetest1/domain/auth/value_objects.dart';
 import './firebase_user_mapper.dart';
 import 'package:vendorsidetest1/domain/auth/auth_types/authtypes.dart';
 
-@lazySingleton
-@RegisterAs(IAuthFacade)
+@LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final CloudFunctions _cloudFunctions;
 
-  FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn);
+  FirebaseAuthFacade(
+      this._firebaseAuth, this._googleSignIn, this._cloudFunctions);
 
   @override
-  Future<Either<AuthFailure, AuthSuccess>>
-      registerWithEmailAndPassword(
-          {EmailAddress emailAddress, Password password}) async {
+  Future<Either<AuthFailure, AuthSuccess>> registerWithEmailAndPassword(
+      {EmailAddress emailAddress, Password password}) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     try {
@@ -47,7 +47,9 @@ class FirebaseAuthFacade implements IAuthFacade {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
           email: emailAddressStr, password: passwordStr);
-      return right(const AuthSuccess.signin());
+
+      return right(AuthSuccess.signin(
+          isVerified: await isVerified() && await isVendor()));
     } on PlatformException catch (e) {
       if (e.code == 'ERROR_WRONG_PASSWORD' ||
           e.code == 'ERROR_USER_NOT_FOUNT') {
@@ -70,8 +72,6 @@ class FirebaseAuthFacade implements IAuthFacade {
           idToken: googleAuthentication.idToken,
           accessToken: googleAuthentication.accessToken);
 
-
-
       return _firebaseAuth.signInWithCredential(authCredential).then((value) {
         return right(const AuthSuccess.googleSignin());
       });
@@ -79,8 +79,6 @@ class FirebaseAuthFacade implements IAuthFacade {
       return left(const AuthFailure.serverError());
     }
   }
-
-
 
   @override
   Future<Option<User>> getSignedInUser() {
@@ -94,16 +92,16 @@ class FirebaseAuthFacade implements IAuthFacade {
     await _firebaseAuth.currentUser().then((onValue) async {
       onValue.reload();
     });
-    bool emailVerificationIsSent = false;
-    _firebaseAuth.currentUser().then((onValue) {
+    return _firebaseAuth.currentUser().then((onValue) async {
       if (onValue.isEmailVerified) {
-        emailVerificationIsSent = false;
+        return false;
       } else {
-        onValue.sendEmailVerification();
-        emailVerificationIsSent = true;
+        await onValue.sendEmailVerification();
+        return true;
       }
-    }).catchError((onError) => {emailVerificationIsSent = false});
-    return emailVerificationIsSent;
+    }).catchError((onError) => {
+          print("Error"),
+        });
   }
 
   @override
@@ -113,13 +111,12 @@ class FirebaseAuthFacade implements IAuthFacade {
     var user = await _firebaseAuth.currentUser();
     token = await user.getIdToken();
 
-    final HttpsCallable callable = CloudFunctions.instance.getHttpsCallable(
+    final HttpsCallable callable = _cloudFunctions.getHttpsCallable(
       functionName: "createDocumentForVerifiedVendorCallable",
     );
     final response = await callable
         .call(<String, dynamic>{"name": "$name", "token": "${token.token}"});
     try {
-      print("Response: ${response.data}");
       if (response.data['Complete'] != null) {
         if (response.data['Complete'] == name) {
           return right(unit);
@@ -138,11 +135,11 @@ class FirebaseAuthFacade implements IAuthFacade {
           return left(const ValidateFailure.unknownError());
         }
       } else {
-        print("Response: $response");
+        print("1Response: ${response.data}");
         return left(const ValidateFailure.unknownError());
       }
     } catch (e) {
-      print("Response: $response.data");
+      print("2Response: $response.data");
       return left(const ValidateFailure.unknownError());
     }
   }
@@ -161,8 +158,6 @@ class FirebaseAuthFacade implements IAuthFacade {
 
     return isEmailVerified;
   }
-
-
 
   @override
   Future<bool> isVendor() async {

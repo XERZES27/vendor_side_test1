@@ -7,6 +7,7 @@ import 'package:vendorsidetest1/domain/core/failures.dart';
 Either<ValueFailure<String>,String> validateEmailAddress(String input){
    const emailRegex =
       r"""^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+""";
+//    const emailRegex = r"""^[^+!@#]*$""";
     if(RegExp(emailRegex).hasMatch(input)){
       return right(input);
     }

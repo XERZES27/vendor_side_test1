@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:vendorsidetest1/application/validate/validation_bloc.dart';
+import 'package:vendorsidetest1/presentation/routes/router.gr.dart';
 
 import '../../../../injections.dart';
 
@@ -137,7 +139,11 @@ class _VerificationFormState extends State<VerificationForm> {
                                       "Unknown Error, This Could Be Caused By A Flaky Connection "),
                               title: "Opps Something Went Wrong")
                           .show(context);
-                    }, (r) => null);
+                    },
+                        (r) => {
+                              ExtendedNavigator.of(context)
+                                  .pushCreateProductPage()
+                            });
                   })
                 });
       },

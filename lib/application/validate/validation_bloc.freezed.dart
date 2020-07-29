@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'validation_bloc.dart';
 
@@ -12,10 +12,12 @@ T _$identity<T>(T value) => value;
 class _$ValidationEventTearOff {
   const _$ValidationEventTearOff();
 
+// ignore: unused_element
   SendVerificationEmail sendVerificationEmail() {
     return const SendVerificationEmail();
   }
 
+// ignore: unused_element
   CreateDocumentForVendor createDocumentForVendor() {
     return const CreateDocumentForVendor();
   }
@@ -263,28 +265,33 @@ abstract class CreateDocumentForVendor implements ValidationEvent {
 class _$ValidationStateTearOff {
   const _$ValidationStateTearOff();
 
+// ignore: unused_element
   CreatingDocument creatingDocument({bool creating}) {
     return CreatingDocument(
       creating: creating,
     );
   }
 
+// ignore: unused_element
   SendingEmailVerification sendingEmailVerification({bool sending}) {
     return SendingEmailVerification(
       sending: sending,
     );
   }
 
+// ignore: unused_element
   SendEmailVerification sendEmailVerification({bool sendVerification}) {
     return SendEmailVerification(
       sendVerification: sendVerification,
     );
   }
 
+// ignore: unused_element
   InitialState initialState() {
     return const InitialState();
   }
 
+// ignore: unused_element
   CreateDocumentforVendor createDocumentForVendor(
       {Option<Either<ValidateFailure, Unit>> createDocument}) {
     return CreateDocumentforVendor(
@@ -292,12 +299,14 @@ class _$ValidationStateTearOff {
     );
   }
 
+// ignore: unused_element
   WaitforTime waitForTime({int duration}) {
     return WaitforTime(
       duration: duration,
     );
   }
 
+// ignore: unused_element
   TryAgainSendingVerification tryAgainSendingVerification() {
     return const TryAgainSendingVerification();
   }
