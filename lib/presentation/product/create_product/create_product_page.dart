@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:ui' as img;
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:dartz/dartz.dart' as dartz;
@@ -14,6 +15,7 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:flushbar/flushbar.dart';
+import 'package:vendorsidetest1/presentation/routes/router.gr.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:vendorsidetest1/application/firestore/product/create_product/create_product_bloc.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/image_properties.dart';
@@ -505,6 +507,21 @@ class _CreateProductFormState extends State<CreateProductForm> {
           deleteSubProduct: (subProduct) {
             selectedSubProducts.removeAt(subProduct.subProductArrayIndex);
           },
+          cancelProductCreation: (cleanUp) {
+            cleanUp.cleanUpFunctionSuccessFailure.fold(
+                (failure) => {
+                      FlushbarHelper.createError(
+                              duration: const Duration(seconds: 2),
+                              message: failure.map(
+                                  imageDocumentDoesNotExist: (_) =>
+                                      "Image File does Not Exist",
+                                  invalidVendor: (_) => "Invalid Vendor",
+                                  unknownError: (_) => "Unknown Error"),
+                              title: "Oops Something Went Wrong")
+                          .show(context)
+                    },
+                (r) => ExtendedNavigator.of(context).pushLoadingPage());
+          },
 //          cancelCurrentSubProduct: (_) {},
           orElse: () {},
         );
@@ -781,13 +798,19 @@ class _CreateProductFormState extends State<CreateProductForm> {
               subProductPriceController.clear();
               subProductAmountController.clear();
               currentSubProductImage = const dartz.None();
-            });
+            },
+            cancelProductCreation: (CancelProductCreation value) {});
         // ignore: avoid_unnecessary_containers
         return Scaffold(
           resizeToAvoidBottomInset: true,
           appBar: AppBar(
             bottomOpacity: 20,
-            actions: <Widget>[Icon(Icons.cancel)],
+            actions: <Widget>[
+              InkWell(
+                onTap: exitPage,
+                child: Icon(Icons.cancel),
+              )
+            ],
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                     bottom:
@@ -1675,7 +1698,7 @@ class _CreateProductFormState extends State<CreateProductForm> {
                       ConstrainedBox(
                         constraints: BoxConstraints(maxHeight: 0.7.hp),
                         child: fetchingCategories
-                            ? Center(
+                            ? const Center(
                                 child: CircularProgressIndicator(
                                 backgroundColor:
                                     Color.fromARGB(200, 189, 21, 249),
@@ -2627,6 +2650,10 @@ class _CreateProductFormState extends State<CreateProductForm> {
 
   void cancelSubProductSelection() {
     _bloc.add(const CreateProductEvent.cancelSubProductSelection());
+  }
+
+  void exitPage() {
+    _bloc.add(const CreateProductEvent.exitPage());
   }
 
   void addSubProduct() {

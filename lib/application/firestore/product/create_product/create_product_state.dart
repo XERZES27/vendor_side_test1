@@ -77,4 +77,7 @@ abstract class CreateProductState with _$CreateProductState {
       {int subProductArrayIndex}) = DeleteSubProduct;
   const factory CreateProductState.cancelCurrentSubProduct() =
       CancelCurrentSubProduct;
+  const factory CreateProductState.cancelProductCreation(
+      {Either<CreateProductOnExitFailure, Unit>
+          cleanUpFunctionSuccessFailure}) = CancelProductCreation;
 }

@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import '../product/create_product/create_product_page.dart';
 import '../sign_in/sign_in_page.dart';
 import '../sign_in/widgets/verification_widgets/verification_waiting_page.dart';
+import '../splash/loading_page.dart';
 import '../splash/splash_page.dart';
 
 class Routes {
@@ -19,11 +20,13 @@ class Routes {
   static const String signInPage = '/sign-in-page';
   static const String verificationPage = '/verification-page';
   static const String createProductPage = '/create-product-page';
+  static const String loadingPage = '/loading-page';
   static const all = <String>{
     splashPage,
     signInPage,
     verificationPage,
     createProductPage,
+    loadingPage,
   };
 }
 
@@ -35,6 +38,7 @@ class Router extends RouterBase {
     RouteDef(Routes.signInPage, page: SignInPage),
     RouteDef(Routes.verificationPage, page: VerificationPage),
     RouteDef(Routes.createProductPage, page: CreateProductPage),
+    RouteDef(Routes.loadingPage, page: LoadingPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -66,6 +70,13 @@ class Router extends RouterBase {
         fullscreenDialog: true,
       );
     },
+    LoadingPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => LoadingPage(),
+        settings: data,
+        fullscreenDialog: true,
+      );
+    },
   };
 }
 
@@ -83,4 +94,6 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushCreateProductPage() =>
       push<dynamic>(Routes.createProductPage);
+
+  Future<dynamic> pushLoadingPage() => push<dynamic>(Routes.loadingPage);
 }

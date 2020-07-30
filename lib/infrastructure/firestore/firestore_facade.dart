@@ -11,6 +11,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/create_product.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/data_transfer_objects/create_product_dto.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/failures/create_product_failure.dart';
+import 'package:vendorsidetest1/domain/firestore/product/create_product/failures/create_product_onexit_failure.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/failures/get_category_failure.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/failures/image_failure.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/image_properties.dart';
@@ -40,6 +41,42 @@ class FirestoreFacade implements IFirestoreFacade {
     }
   }
 
+  @override
+  Future<Either<CreateProductOnExitFailure, Unit>>
+      deleteImagesPathFromVendorDocument() async {
+    if (documentPathForImages != null) {
+      final HttpsCallable callable = _cloudFunctions.getHttpsCallable(
+          functionName: "deleteImagesPathFromVendorDocument");
+      final user = await FirebaseAuth.instance.currentUser();
+      final token = await user.getIdToken();
+      try {
+        final response = await callable.call({
+          "token": token.token,
+          "pathOfImagesDocument": "$documentPathForImages"
+        });
+        if (response.data['Complete'] != null) {
+          print("Right");
+          return const Right(unit);
+        } else if (response.data['Error'] != null) {
+          if (response.data['Error'].toString().contains("No such object")) {
+            return const Left(
+                CreateProductOnExitFailure.imageDocumentDoesNotExist());
+          } else if (response.data['Error'] == 'This Account is Not a Vendor') {
+            return const Left(CreateProductOnExitFailure.invalidVendor());
+          } else {
+            return const Left(CreateProductOnExitFailure.unknownError());
+          }
+        } else {
+          return const Left(CreateProductOnExitFailure.unknownError());
+        }
+      } catch (e) {
+        return const Left(CreateProductOnExitFailure.unknownError());
+      }
+    } else {
+      return const Right(unit);
+    }
+  }
+
   Future<void> writeImagesPathToVendorDocument(String documentPath) async {
 //    print("documentPath : ${documentPathForImages}");
     final HttpsCallable callable = _cloudFunctions.getHttpsCallable(
@@ -49,7 +86,6 @@ class FirestoreFacade implements IFirestoreFacade {
     try {
       final response = await callable
           .call({"token": token.token, "pathOfImagesDocument": documentPath});
-      print("Response ${response}");
       if (response.data['Complete'] != null) {
         imagesPathToVendor = true;
       } else {
@@ -134,6 +170,7 @@ class FirestoreFacade implements IFirestoreFacade {
 
     final StorageUploadTask uploadTask =
         storageReference.putFile(imageProperties.image);
+
     await uploadTask.onComplete;
     await storageReference.getDownloadURL().then((url) => {downloadUrl = url});
 

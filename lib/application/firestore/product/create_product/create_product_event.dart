@@ -58,4 +58,6 @@ abstract class CreateProductEvent with _$CreateProductEvent {
   const factory CreateProductEvent.editSubProduct({
     int subProductArrayIndex,
   }) = EditSubProduct;
+
+  const factory CreateProductEvent.exitPage() = ExitPage;
 }

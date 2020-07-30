@@ -14,7 +14,7 @@ import 'package:vendorsidetest1/domain/firestore/product/create_product/subprodu
 import 'package:vendorsidetest1/domain/firestore/product/create_product/value_objects.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/failures/create_product_failure.dart';
 import 'package:vendorsidetest1/domain/firestore/product/create_product/failures/image_failure.dart';
-
+import 'package:vendorsidetest1/domain/firestore/product/create_product/failures/create_product_onexit_failure.dart';
 part 'create_product_event.dart';
 part 'create_product_state.dart';
 part 'create_product_bloc.freezed.dart';
@@ -178,6 +178,12 @@ class CreateProductBloc extends Bloc<CreateProductEvent, CreateProductState> {
       yield DeleteSubProduct(subProductArrayIndex: e.subProductArrayIndex);
     }, cancelSubProductSelection: (e) async* {
       yield const CancelCurrentSubProduct();
+    }, exitPage: (e)async* {
+
+      final Either<CreateProductOnExitFailure, Unit>  cleanUpFunctionSuccessFailure = await _fireStoreFacade.deleteImagesPathFromVendorDocument();
+      yield CancelProductCreation(cleanUpFunctionSuccessFailure: cleanUpFunctionSuccessFailure);
+
+
     });
   }
 
@@ -185,8 +191,9 @@ class CreateProductBloc extends Bloc<CreateProductEvent, CreateProductState> {
       List<String> currentCategoryHeirarchy) {
     String composeCategoryQuery = "";
     for (var i = 0; i < currentCategoryHeirarchy.length; i++) {
+      // ignore: use_string_buffers
       composeCategoryQuery =
-          composeCategoryQuery + "${currentCategoryHeirarchy[i]}";
+          "$composeCategoryQuery${"${currentCategoryHeirarchy[i]}"}";
       if (i < selectedCategoryList.length) {
         composeCategoryQuery += "/${selectedCategoryList[i]}/";
       } else {

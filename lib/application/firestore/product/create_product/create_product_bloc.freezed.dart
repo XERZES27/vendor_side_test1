@@ -159,6 +159,11 @@ class _$CreateProductEventTearOff {
       subProductArrayIndex: subProductArrayIndex,
     );
   }
+
+// ignore: unused_element
+  ExitPage exitPage() {
+    return const ExitPage();
+  }
 }
 
 // ignore: unused_element
@@ -205,6 +210,7 @@ mixin _$CreateProductEvent {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -242,6 +248,7 @@ mixin _$CreateProductEvent {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -262,6 +269,7 @@ mixin _$CreateProductEvent {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -281,6 +289,7 @@ mixin _$CreateProductEvent {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   });
 }
@@ -484,6 +493,7 @@ class _$ValidateEntity implements ValidateEntity {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -501,6 +511,7 @@ class _$ValidateEntity implements ValidateEntity {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return validateEntity(
         productName,
         categories,
@@ -549,6 +560,7 @@ class _$ValidateEntity implements ValidateEntity {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -585,6 +597,7 @@ class _$ValidateEntity implements ValidateEntity {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -602,6 +615,7 @@ class _$ValidateEntity implements ValidateEntity {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return validateEntity(this);
   }
 
@@ -624,6 +638,7 @@ class _$ValidateEntity implements ValidateEntity {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -840,6 +855,7 @@ class _$SubmitProduct implements SubmitProduct {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -857,6 +873,7 @@ class _$SubmitProduct implements SubmitProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return submitProduct(
         productName,
         categories,
@@ -905,6 +922,7 @@ class _$SubmitProduct implements SubmitProduct {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -941,6 +959,7 @@ class _$SubmitProduct implements SubmitProduct {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -958,6 +977,7 @@ class _$SubmitProduct implements SubmitProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return submitProduct(this);
   }
 
@@ -980,6 +1000,7 @@ class _$SubmitProduct implements SubmitProduct {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1086,6 +1107,7 @@ class _$CancelCategorySelection implements CancelCategorySelection {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1103,6 +1125,7 @@ class _$CancelCategorySelection implements CancelCategorySelection {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return cancelCategorySelection();
   }
 
@@ -1143,6 +1166,7 @@ class _$CancelCategorySelection implements CancelCategorySelection {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1171,6 +1195,7 @@ class _$CancelCategorySelection implements CancelCategorySelection {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1188,6 +1213,7 @@ class _$CancelCategorySelection implements CancelCategorySelection {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return cancelCategorySelection(this);
   }
 
@@ -1210,6 +1236,7 @@ class _$CancelCategorySelection implements CancelCategorySelection {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1322,6 +1349,7 @@ class _$ChooseCategory implements ChooseCategory {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1339,6 +1367,7 @@ class _$ChooseCategory implements ChooseCategory {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return chooseCategory(categories);
   }
 
@@ -1379,6 +1408,7 @@ class _$ChooseCategory implements ChooseCategory {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1407,6 +1437,7 @@ class _$ChooseCategory implements ChooseCategory {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1424,6 +1455,7 @@ class _$ChooseCategory implements ChooseCategory {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return chooseCategory(this);
   }
 
@@ -1446,6 +1478,7 @@ class _$ChooseCategory implements ChooseCategory {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1537,6 +1570,7 @@ class _$DeleteSelectedCategory implements DeleteSelectedCategory {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1554,6 +1588,7 @@ class _$DeleteSelectedCategory implements DeleteSelectedCategory {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return deleteSelectedCategory();
   }
 
@@ -1594,6 +1629,7 @@ class _$DeleteSelectedCategory implements DeleteSelectedCategory {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1622,6 +1658,7 @@ class _$DeleteSelectedCategory implements DeleteSelectedCategory {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1639,6 +1676,7 @@ class _$DeleteSelectedCategory implements DeleteSelectedCategory {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return deleteSelectedCategory(this);
   }
 
@@ -1661,6 +1699,7 @@ class _$DeleteSelectedCategory implements DeleteSelectedCategory {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1749,6 +1788,7 @@ class _$SelectImages implements SelectImages {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1766,6 +1806,7 @@ class _$SelectImages implements SelectImages {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return selectImages();
   }
 
@@ -1806,6 +1847,7 @@ class _$SelectImages implements SelectImages {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1834,6 +1876,7 @@ class _$SelectImages implements SelectImages {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -1851,6 +1894,7 @@ class _$SelectImages implements SelectImages {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return selectImages(this);
   }
 
@@ -1873,6 +1917,7 @@ class _$SelectImages implements SelectImages {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1989,6 +2034,7 @@ class _$AddImage implements AddImage {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2006,6 +2052,7 @@ class _$AddImage implements AddImage {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return addImage(image, imagePath);
   }
 
@@ -2046,6 +2093,7 @@ class _$AddImage implements AddImage {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2074,6 +2122,7 @@ class _$AddImage implements AddImage {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2091,6 +2140,7 @@ class _$AddImage implements AddImage {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return addImage(this);
   }
 
@@ -2113,6 +2163,7 @@ class _$AddImage implements AddImage {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2235,6 +2286,7 @@ class _$UploadImage implements UploadImage {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2252,6 +2304,7 @@ class _$UploadImage implements UploadImage {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return uploadImage(image, imagePath);
   }
 
@@ -2292,6 +2345,7 @@ class _$UploadImage implements UploadImage {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2320,6 +2374,7 @@ class _$UploadImage implements UploadImage {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2337,6 +2392,7 @@ class _$UploadImage implements UploadImage {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return uploadImage(this);
   }
 
@@ -2359,6 +2415,7 @@ class _$UploadImage implements UploadImage {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2488,6 +2545,7 @@ class _$DeleteImage implements DeleteImage {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2505,6 +2563,7 @@ class _$DeleteImage implements DeleteImage {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return deleteImage(imageProperties);
   }
 
@@ -2545,6 +2604,7 @@ class _$DeleteImage implements DeleteImage {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2573,6 +2633,7 @@ class _$DeleteImage implements DeleteImage {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2590,6 +2651,7 @@ class _$DeleteImage implements DeleteImage {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return deleteImage(this);
   }
 
@@ -2612,6 +2674,7 @@ class _$DeleteImage implements DeleteImage {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2703,6 +2766,7 @@ class _$ImagePageClose implements ImagePageClose {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2720,6 +2784,7 @@ class _$ImagePageClose implements ImagePageClose {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return imagePageClose();
   }
 
@@ -2760,6 +2825,7 @@ class _$ImagePageClose implements ImagePageClose {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2788,6 +2854,7 @@ class _$ImagePageClose implements ImagePageClose {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2805,6 +2872,7 @@ class _$ImagePageClose implements ImagePageClose {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return imagePageClose(this);
   }
 
@@ -2827,6 +2895,7 @@ class _$ImagePageClose implements ImagePageClose {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2968,6 +3037,7 @@ class _$SubmitSubProduct implements SubmitSubProduct {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -2985,6 +3055,7 @@ class _$SubmitSubProduct implements SubmitSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return submitSubProduct(productName, price, amount, imageProperties);
   }
 
@@ -3025,6 +3096,7 @@ class _$SubmitSubProduct implements SubmitSubProduct {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3053,6 +3125,7 @@ class _$SubmitSubProduct implements SubmitSubProduct {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3070,6 +3143,7 @@ class _$SubmitSubProduct implements SubmitSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return submitSubProduct(this);
   }
 
@@ -3092,6 +3166,7 @@ class _$SubmitSubProduct implements SubmitSubProduct {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3243,6 +3318,7 @@ class _$OnSubProductChange implements OnSubProductChange {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3260,6 +3336,7 @@ class _$OnSubProductChange implements OnSubProductChange {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return onSubProductChange(productName, price, amount, imageProperties);
   }
 
@@ -3300,6 +3377,7 @@ class _$OnSubProductChange implements OnSubProductChange {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3328,6 +3406,7 @@ class _$OnSubProductChange implements OnSubProductChange {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3345,6 +3424,7 @@ class _$OnSubProductChange implements OnSubProductChange {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return onSubProductChange(this);
   }
 
@@ -3367,6 +3447,7 @@ class _$OnSubProductChange implements OnSubProductChange {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3466,6 +3547,7 @@ class _$CancelSubProductSelection implements CancelSubProductSelection {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3483,6 +3565,7 @@ class _$CancelSubProductSelection implements CancelSubProductSelection {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return cancelSubProductSelection();
   }
 
@@ -3523,6 +3606,7 @@ class _$CancelSubProductSelection implements CancelSubProductSelection {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3551,6 +3635,7 @@ class _$CancelSubProductSelection implements CancelSubProductSelection {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3568,6 +3653,7 @@ class _$CancelSubProductSelection implements CancelSubProductSelection {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return cancelSubProductSelection(this);
   }
 
@@ -3590,6 +3676,7 @@ class _$CancelSubProductSelection implements CancelSubProductSelection {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3701,6 +3788,7 @@ class _$AddSubProduct implements AddSubProduct {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3718,6 +3806,7 @@ class _$AddSubProduct implements AddSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return addSubProduct(typesList);
   }
 
@@ -3758,6 +3847,7 @@ class _$AddSubProduct implements AddSubProduct {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3786,6 +3876,7 @@ class _$AddSubProduct implements AddSubProduct {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3803,6 +3894,7 @@ class _$AddSubProduct implements AddSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return addSubProduct(this);
   }
 
@@ -3825,6 +3917,7 @@ class _$AddSubProduct implements AddSubProduct {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3941,6 +4034,7 @@ class _$RemoveSubProduct implements RemoveSubProduct {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -3958,6 +4052,7 @@ class _$RemoveSubProduct implements RemoveSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return removeSubProduct(subProductArrayIndex);
   }
 
@@ -3998,6 +4093,7 @@ class _$RemoveSubProduct implements RemoveSubProduct {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4026,6 +4122,7 @@ class _$RemoveSubProduct implements RemoveSubProduct {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -4043,6 +4140,7 @@ class _$RemoveSubProduct implements RemoveSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return removeSubProduct(this);
   }
 
@@ -4065,6 +4163,7 @@ class _$RemoveSubProduct implements RemoveSubProduct {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4182,6 +4281,7 @@ class _$EditSubProduct implements EditSubProduct {
     @required Result addSubProduct(List<Map> typesList),
     @required Result removeSubProduct(int subProductArrayIndex),
     @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -4199,6 +4299,7 @@ class _$EditSubProduct implements EditSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return editSubProduct(subProductArrayIndex);
   }
 
@@ -4239,6 +4340,7 @@ class _$EditSubProduct implements EditSubProduct {
     Result addSubProduct(List<Map> typesList),
     Result removeSubProduct(int subProductArrayIndex),
     Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4267,6 +4369,7 @@ class _$EditSubProduct implements EditSubProduct {
     @required Result addSubProduct(AddSubProduct value),
     @required Result removeSubProduct(RemoveSubProduct value),
     @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
   }) {
     assert(validateEntity != null);
     assert(submitProduct != null);
@@ -4284,6 +4387,7 @@ class _$EditSubProduct implements EditSubProduct {
     assert(addSubProduct != null);
     assert(removeSubProduct != null);
     assert(editSubProduct != null);
+    assert(exitPage != null);
     return editSubProduct(this);
   }
 
@@ -4306,6 +4410,7 @@ class _$EditSubProduct implements EditSubProduct {
     Result addSubProduct(AddSubProduct value),
     Result removeSubProduct(RemoveSubProduct value),
     Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4321,6 +4426,222 @@ abstract class EditSubProduct implements CreateProductEvent {
 
   int get subProductArrayIndex;
   $EditSubProductCopyWith<EditSubProduct> get copyWith;
+}
+
+abstract class $ExitPageCopyWith<$Res> {
+  factory $ExitPageCopyWith(ExitPage value, $Res Function(ExitPage) then) =
+      _$ExitPageCopyWithImpl<$Res>;
+}
+
+class _$ExitPageCopyWithImpl<$Res>
+    extends _$CreateProductEventCopyWithImpl<$Res>
+    implements $ExitPageCopyWith<$Res> {
+  _$ExitPageCopyWithImpl(ExitPage _value, $Res Function(ExitPage) _then)
+      : super(_value, (v) => _then(v as ExitPage));
+
+  @override
+  ExitPage get _value => super._value as ExitPage;
+}
+
+class _$ExitPage implements ExitPage {
+  const _$ExitPage();
+
+  @override
+  String toString() {
+    return 'CreateProductEvent.exitPage()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ExitPage);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result validateEntity(
+            String productName,
+            List<String> categories,
+            String productDescription,
+            String hypeDescription,
+            double defaultSubProductPrice,
+            int defaultSubProductAmount,
+            List<ImageProperties> imageList,
+            List<Map> typesList),
+    @required
+        Result submitProduct(
+            String productName,
+            List<String> categories,
+            String productDescription,
+            String hypeDescription,
+            double defaultSubProductPrice,
+            int defaultSubProductAmount,
+            List<ImageProperties> imageList,
+            List<Map> typesList),
+    @required Result cancelCategorySelection(),
+    @required Result chooseCategory(KtList<String> categories),
+    @required Result deleteSelectedCategory(),
+    @required Result selectImages(),
+    @required Result addImage(File image, String imagePath),
+    @required Result uploadImage(File image, String imagePath),
+    @required Result deleteImage(ImageProperties imageProperties),
+    @required Result imagePageClose(),
+    @required
+        Result submitSubProduct(String productName, double price, int amount,
+            Option<ImageProperties> imageProperties),
+    @required
+        Result onSubProductChange(String productName, double price, int amount,
+            Option<ImageProperties> imageProperties),
+    @required Result cancelSubProductSelection(),
+    @required Result addSubProduct(List<Map> typesList),
+    @required Result removeSubProduct(int subProductArrayIndex),
+    @required Result editSubProduct(int subProductArrayIndex),
+    @required Result exitPage(),
+  }) {
+    assert(validateEntity != null);
+    assert(submitProduct != null);
+    assert(cancelCategorySelection != null);
+    assert(chooseCategory != null);
+    assert(deleteSelectedCategory != null);
+    assert(selectImages != null);
+    assert(addImage != null);
+    assert(uploadImage != null);
+    assert(deleteImage != null);
+    assert(imagePageClose != null);
+    assert(submitSubProduct != null);
+    assert(onSubProductChange != null);
+    assert(cancelSubProductSelection != null);
+    assert(addSubProduct != null);
+    assert(removeSubProduct != null);
+    assert(editSubProduct != null);
+    assert(exitPage != null);
+    return exitPage();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result validateEntity(
+        String productName,
+        List<String> categories,
+        String productDescription,
+        String hypeDescription,
+        double defaultSubProductPrice,
+        int defaultSubProductAmount,
+        List<ImageProperties> imageList,
+        List<Map> typesList),
+    Result submitProduct(
+        String productName,
+        List<String> categories,
+        String productDescription,
+        String hypeDescription,
+        double defaultSubProductPrice,
+        int defaultSubProductAmount,
+        List<ImageProperties> imageList,
+        List<Map> typesList),
+    Result cancelCategorySelection(),
+    Result chooseCategory(KtList<String> categories),
+    Result deleteSelectedCategory(),
+    Result selectImages(),
+    Result addImage(File image, String imagePath),
+    Result uploadImage(File image, String imagePath),
+    Result deleteImage(ImageProperties imageProperties),
+    Result imagePageClose(),
+    Result submitSubProduct(String productName, double price, int amount,
+        Option<ImageProperties> imageProperties),
+    Result onSubProductChange(String productName, double price, int amount,
+        Option<ImageProperties> imageProperties),
+    Result cancelSubProductSelection(),
+    Result addSubProduct(List<Map> typesList),
+    Result removeSubProduct(int subProductArrayIndex),
+    Result editSubProduct(int subProductArrayIndex),
+    Result exitPage(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (exitPage != null) {
+      return exitPage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result validateEntity(ValidateEntity value),
+    @required Result submitProduct(SubmitProduct value),
+    @required Result cancelCategorySelection(CancelCategorySelection value),
+    @required Result chooseCategory(ChooseCategory value),
+    @required Result deleteSelectedCategory(DeleteSelectedCategory value),
+    @required Result selectImages(SelectImages value),
+    @required Result addImage(AddImage value),
+    @required Result uploadImage(UploadImage value),
+    @required Result deleteImage(DeleteImage value),
+    @required Result imagePageClose(ImagePageClose value),
+    @required Result submitSubProduct(SubmitSubProduct value),
+    @required Result onSubProductChange(OnSubProductChange value),
+    @required Result cancelSubProductSelection(CancelSubProductSelection value),
+    @required Result addSubProduct(AddSubProduct value),
+    @required Result removeSubProduct(RemoveSubProduct value),
+    @required Result editSubProduct(EditSubProduct value),
+    @required Result exitPage(ExitPage value),
+  }) {
+    assert(validateEntity != null);
+    assert(submitProduct != null);
+    assert(cancelCategorySelection != null);
+    assert(chooseCategory != null);
+    assert(deleteSelectedCategory != null);
+    assert(selectImages != null);
+    assert(addImage != null);
+    assert(uploadImage != null);
+    assert(deleteImage != null);
+    assert(imagePageClose != null);
+    assert(submitSubProduct != null);
+    assert(onSubProductChange != null);
+    assert(cancelSubProductSelection != null);
+    assert(addSubProduct != null);
+    assert(removeSubProduct != null);
+    assert(editSubProduct != null);
+    assert(exitPage != null);
+    return exitPage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result validateEntity(ValidateEntity value),
+    Result submitProduct(SubmitProduct value),
+    Result cancelCategorySelection(CancelCategorySelection value),
+    Result chooseCategory(ChooseCategory value),
+    Result deleteSelectedCategory(DeleteSelectedCategory value),
+    Result selectImages(SelectImages value),
+    Result addImage(AddImage value),
+    Result uploadImage(UploadImage value),
+    Result deleteImage(DeleteImage value),
+    Result imagePageClose(ImagePageClose value),
+    Result submitSubProduct(SubmitSubProduct value),
+    Result onSubProductChange(OnSubProductChange value),
+    Result cancelSubProductSelection(CancelSubProductSelection value),
+    Result addSubProduct(AddSubProduct value),
+    Result removeSubProduct(RemoveSubProduct value),
+    Result editSubProduct(EditSubProduct value),
+    Result exitPage(ExitPage value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (exitPage != null) {
+      return exitPage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ExitPage implements CreateProductEvent {
+  const factory ExitPage() = _$ExitPage;
 }
 
 class _$CreateProductStateTearOff {
@@ -4487,6 +4808,15 @@ class _$CreateProductStateTearOff {
   CancelCurrentSubProduct cancelCurrentSubProduct() {
     return const CancelCurrentSubProduct();
   }
+
+// ignore: unused_element
+  CancelProductCreation cancelProductCreation(
+      {Either<CreateProductOnExitFailure, Unit>
+          cleanUpFunctionSuccessFailure}) {
+    return CancelProductCreation(
+      cleanUpFunctionSuccessFailure: cleanUpFunctionSuccessFailure,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -4533,6 +4863,10 @@ mixin _$CreateProductState {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -4566,6 +4900,8 @@ mixin _$CreateProductState {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -4598,6 +4934,7 @@ mixin _$CreateProductState {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -4626,6 +4963,7 @@ mixin _$CreateProductState {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   });
 }
@@ -4744,6 +5082,10 @@ class _$InitialState implements InitialState {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -4770,6 +5112,7 @@ class _$InitialState implements InitialState {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return initialState(showErrorMessages);
   }
 
@@ -4806,6 +5149,8 @@ class _$InitialState implements InitialState {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4846,6 +5191,7 @@ class _$InitialState implements InitialState {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -4872,6 +5218,7 @@ class _$InitialState implements InitialState {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return initialState(this);
   }
 
@@ -4903,6 +5250,7 @@ class _$InitialState implements InitialState {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5029,6 +5377,10 @@ class _$ValidatedProduct implements ValidatedProduct {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5055,6 +5407,7 @@ class _$ValidatedProduct implements ValidatedProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedProduct(entity, showErrorMessages);
   }
 
@@ -5091,6 +5444,8 @@ class _$ValidatedProduct implements ValidatedProduct {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5131,6 +5486,7 @@ class _$ValidatedProduct implements ValidatedProduct {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5157,6 +5513,7 @@ class _$ValidatedProduct implements ValidatedProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedProduct(this);
   }
 
@@ -5188,6 +5545,7 @@ class _$ValidatedProduct implements ValidatedProduct {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5308,6 +5666,10 @@ class _$CreateProductSuccessFailure implements CreateProductSuccessFailure {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5334,6 +5696,7 @@ class _$CreateProductSuccessFailure implements CreateProductSuccessFailure {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return createProductSuccessFailure(product);
   }
 
@@ -5370,6 +5733,8 @@ class _$CreateProductSuccessFailure implements CreateProductSuccessFailure {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5410,6 +5775,7 @@ class _$CreateProductSuccessFailure implements CreateProductSuccessFailure {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5436,6 +5802,7 @@ class _$CreateProductSuccessFailure implements CreateProductSuccessFailure {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return createProductSuccessFailure(this);
   }
 
@@ -5467,6 +5834,7 @@ class _$CreateProductSuccessFailure implements CreateProductSuccessFailure {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5561,6 +5929,10 @@ class _$IsSubmittingProduct implements IsSubmittingProduct {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5587,6 +5959,7 @@ class _$IsSubmittingProduct implements IsSubmittingProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return isSubmittingProduct();
   }
 
@@ -5623,6 +5996,8 @@ class _$IsSubmittingProduct implements IsSubmittingProduct {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5663,6 +6038,7 @@ class _$IsSubmittingProduct implements IsSubmittingProduct {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5689,6 +6065,7 @@ class _$IsSubmittingProduct implements IsSubmittingProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return isSubmittingProduct(this);
   }
 
@@ -5720,6 +6097,7 @@ class _$IsSubmittingProduct implements IsSubmittingProduct {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5838,6 +6216,10 @@ class _$FetchedCategoriesResult implements FetchedCategoriesResult {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5864,6 +6246,7 @@ class _$FetchedCategoriesResult implements FetchedCategoriesResult {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return fetchedCategoriesResult(getCategoriesSuccessFailure);
   }
 
@@ -5900,6 +6283,8 @@ class _$FetchedCategoriesResult implements FetchedCategoriesResult {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5940,6 +6325,7 @@ class _$FetchedCategoriesResult implements FetchedCategoriesResult {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -5966,6 +6352,7 @@ class _$FetchedCategoriesResult implements FetchedCategoriesResult {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return fetchedCategoriesResult(this);
   }
 
@@ -5997,6 +6384,7 @@ class _$FetchedCategoriesResult implements FetchedCategoriesResult {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6090,6 +6478,10 @@ class _$FetchingCategories implements FetchingCategories {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6116,6 +6508,7 @@ class _$FetchingCategories implements FetchingCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return fetchingCategories();
   }
 
@@ -6152,6 +6545,8 @@ class _$FetchingCategories implements FetchingCategories {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6192,6 +6587,7 @@ class _$FetchingCategories implements FetchingCategories {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6218,6 +6614,7 @@ class _$FetchingCategories implements FetchingCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return fetchingCategories(this);
   }
 
@@ -6249,6 +6646,7 @@ class _$FetchingCategories implements FetchingCategories {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6364,6 +6762,10 @@ class _$SubmitSelectedCategories implements SubmitSelectedCategories {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6390,6 +6792,7 @@ class _$SubmitSelectedCategories implements SubmitSelectedCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return submitSelectedCategories(selectedCategories);
   }
 
@@ -6426,6 +6829,8 @@ class _$SubmitSelectedCategories implements SubmitSelectedCategories {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6466,6 +6871,7 @@ class _$SubmitSelectedCategories implements SubmitSelectedCategories {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6492,6 +6898,7 @@ class _$SubmitSelectedCategories implements SubmitSelectedCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return submitSelectedCategories(this);
   }
 
@@ -6523,6 +6930,7 @@ class _$SubmitSelectedCategories implements SubmitSelectedCategories {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6616,6 +7024,10 @@ class _$CancelSelectedCategories implements CancelSelectedCategories {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6642,6 +7054,7 @@ class _$CancelSelectedCategories implements CancelSelectedCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return cancelSelectedCategories();
   }
 
@@ -6678,6 +7091,8 @@ class _$CancelSelectedCategories implements CancelSelectedCategories {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6718,6 +7133,7 @@ class _$CancelSelectedCategories implements CancelSelectedCategories {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6744,6 +7160,7 @@ class _$CancelSelectedCategories implements CancelSelectedCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return cancelSelectedCategories(this);
   }
 
@@ -6775,6 +7192,7 @@ class _$CancelSelectedCategories implements CancelSelectedCategories {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6863,6 +7281,10 @@ class _$ClearSelectedCategories implements ClearSelectedCategories {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6889,6 +7311,7 @@ class _$ClearSelectedCategories implements ClearSelectedCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return clearSelectedCategories();
   }
 
@@ -6925,6 +7348,8 @@ class _$ClearSelectedCategories implements ClearSelectedCategories {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6965,6 +7390,7 @@ class _$ClearSelectedCategories implements ClearSelectedCategories {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -6991,6 +7417,7 @@ class _$ClearSelectedCategories implements ClearSelectedCategories {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return clearSelectedCategories(this);
   }
 
@@ -7022,6 +7449,7 @@ class _$ClearSelectedCategories implements ClearSelectedCategories {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7110,6 +7538,10 @@ class _$OpenImagePage implements OpenImagePage {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -7136,6 +7568,7 @@ class _$OpenImagePage implements OpenImagePage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return openImagePage();
   }
 
@@ -7172,6 +7605,8 @@ class _$OpenImagePage implements OpenImagePage {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7212,6 +7647,7 @@ class _$OpenImagePage implements OpenImagePage {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -7238,6 +7674,7 @@ class _$OpenImagePage implements OpenImagePage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return openImagePage(this);
   }
 
@@ -7269,6 +7706,7 @@ class _$OpenImagePage implements OpenImagePage {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7390,6 +7828,10 @@ class _$ValidatedImage implements ValidatedImage {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -7416,6 +7858,7 @@ class _$ValidatedImage implements ValidatedImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedImage(productImage, imagePath);
   }
 
@@ -7452,6 +7895,8 @@ class _$ValidatedImage implements ValidatedImage {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7492,6 +7937,7 @@ class _$ValidatedImage implements ValidatedImage {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -7518,6 +7964,7 @@ class _$ValidatedImage implements ValidatedImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedImage(this);
   }
 
@@ -7549,6 +7996,7 @@ class _$ValidatedImage implements ValidatedImage {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7642,6 +8090,10 @@ class _$UploadingImage implements UploadingImage {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -7668,6 +8120,7 @@ class _$UploadingImage implements UploadingImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return uploadingImage();
   }
 
@@ -7704,6 +8157,8 @@ class _$UploadingImage implements UploadingImage {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7744,6 +8199,7 @@ class _$UploadingImage implements UploadingImage {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -7770,6 +8226,7 @@ class _$UploadingImage implements UploadingImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return uploadingImage(this);
   }
 
@@ -7801,6 +8258,7 @@ class _$UploadingImage implements UploadingImage {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7916,6 +8374,10 @@ class _$UploadedImageResult implements UploadedImageResult {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -7942,6 +8404,7 @@ class _$UploadedImageResult implements UploadedImageResult {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return uploadedImageResult(imageUploadSuccessFailure);
   }
 
@@ -7978,6 +8441,8 @@ class _$UploadedImageResult implements UploadedImageResult {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8018,6 +8483,7 @@ class _$UploadedImageResult implements UploadedImageResult {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8044,6 +8510,7 @@ class _$UploadedImageResult implements UploadedImageResult {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return uploadedImageResult(this);
   }
 
@@ -8075,6 +8542,7 @@ class _$UploadedImageResult implements UploadedImageResult {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8168,6 +8636,10 @@ class _$IsSubmittingImage implements IsSubmittingImage {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8194,6 +8666,7 @@ class _$IsSubmittingImage implements IsSubmittingImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return isSubmittingImage();
   }
 
@@ -8230,6 +8703,8 @@ class _$IsSubmittingImage implements IsSubmittingImage {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8270,6 +8745,7 @@ class _$IsSubmittingImage implements IsSubmittingImage {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8296,6 +8772,7 @@ class _$IsSubmittingImage implements IsSubmittingImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return isSubmittingImage(this);
   }
 
@@ -8327,6 +8804,7 @@ class _$IsSubmittingImage implements IsSubmittingImage {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8415,6 +8893,10 @@ class _$DiscardSelectedImages implements DiscardSelectedImages {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8441,6 +8923,7 @@ class _$DiscardSelectedImages implements DiscardSelectedImages {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return discardSelectedImages();
   }
 
@@ -8477,6 +8960,8 @@ class _$DiscardSelectedImages implements DiscardSelectedImages {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8517,6 +9002,7 @@ class _$DiscardSelectedImages implements DiscardSelectedImages {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8543,6 +9029,7 @@ class _$DiscardSelectedImages implements DiscardSelectedImages {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return discardSelectedImages(this);
   }
 
@@ -8574,6 +9061,7 @@ class _$DiscardSelectedImages implements DiscardSelectedImages {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8691,6 +9179,10 @@ class _$DeleteImageSuccessFailure implements DeleteImageSuccessFailure {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8717,6 +9209,7 @@ class _$DeleteImageSuccessFailure implements DeleteImageSuccessFailure {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return deleteImageSuccessFailure(imageDeleteSuccessFailure);
   }
 
@@ -8753,6 +9246,8 @@ class _$DeleteImageSuccessFailure implements DeleteImageSuccessFailure {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8793,6 +9288,7 @@ class _$DeleteImageSuccessFailure implements DeleteImageSuccessFailure {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8819,6 +9315,7 @@ class _$DeleteImageSuccessFailure implements DeleteImageSuccessFailure {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return deleteImageSuccessFailure(this);
   }
 
@@ -8850,6 +9347,7 @@ class _$DeleteImageSuccessFailure implements DeleteImageSuccessFailure {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8943,6 +9441,10 @@ class _$DeletingImage implements DeletingImage {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -8969,6 +9471,7 @@ class _$DeletingImage implements DeletingImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return deletingImage();
   }
 
@@ -9005,6 +9508,8 @@ class _$DeletingImage implements DeletingImage {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9045,6 +9550,7 @@ class _$DeletingImage implements DeletingImage {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -9071,6 +9577,7 @@ class _$DeletingImage implements DeletingImage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return deletingImage(this);
   }
 
@@ -9102,6 +9609,7 @@ class _$DeletingImage implements DeletingImage {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9190,6 +9698,10 @@ class _$CloseImagePage implements CloseImagePage {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -9216,6 +9728,7 @@ class _$CloseImagePage implements CloseImagePage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return closeImagePage();
   }
 
@@ -9252,6 +9765,8 @@ class _$CloseImagePage implements CloseImagePage {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9292,6 +9807,7 @@ class _$CloseImagePage implements CloseImagePage {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -9318,6 +9834,7 @@ class _$CloseImagePage implements CloseImagePage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return closeImagePage(this);
   }
 
@@ -9349,6 +9866,7 @@ class _$CloseImagePage implements CloseImagePage {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9464,6 +9982,10 @@ class _$OpenSubProductPage implements OpenSubProductPage {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -9490,6 +10012,7 @@ class _$OpenSubProductPage implements OpenSubProductPage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return openSubProductPage(addSubProductSuccessFailure);
   }
 
@@ -9526,6 +10049,8 @@ class _$OpenSubProductPage implements OpenSubProductPage {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9566,6 +10091,7 @@ class _$OpenSubProductPage implements OpenSubProductPage {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -9592,6 +10118,7 @@ class _$OpenSubProductPage implements OpenSubProductPage {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return openSubProductPage(this);
   }
 
@@ -9623,6 +10150,7 @@ class _$OpenSubProductPage implements OpenSubProductPage {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9740,6 +10268,10 @@ class _$LoadSubProduct implements LoadSubProduct {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -9766,6 +10298,7 @@ class _$LoadSubProduct implements LoadSubProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return loadSubProduct(subProductArrayIndex);
   }
 
@@ -9802,6 +10335,8 @@ class _$LoadSubProduct implements LoadSubProduct {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9842,6 +10377,7 @@ class _$LoadSubProduct implements LoadSubProduct {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -9868,6 +10404,7 @@ class _$LoadSubProduct implements LoadSubProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return loadSubProduct(this);
   }
 
@@ -9899,6 +10436,7 @@ class _$LoadSubProduct implements LoadSubProduct {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9990,6 +10528,10 @@ class _$IsSubmittingSubProducts implements IsSubmittingSubProducts {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10016,6 +10558,7 @@ class _$IsSubmittingSubProducts implements IsSubmittingSubProducts {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return isSubmittingSubProducts();
   }
 
@@ -10052,6 +10595,8 @@ class _$IsSubmittingSubProducts implements IsSubmittingSubProducts {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10092,6 +10637,7 @@ class _$IsSubmittingSubProducts implements IsSubmittingSubProducts {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10118,6 +10664,7 @@ class _$IsSubmittingSubProducts implements IsSubmittingSubProducts {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return isSubmittingSubProducts(this);
   }
 
@@ -10149,6 +10696,7 @@ class _$IsSubmittingSubProducts implements IsSubmittingSubProducts {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10275,6 +10823,10 @@ class _$ValidatedSubProductOnSubmit implements ValidatedSubProductOnSubmit {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10301,6 +10853,7 @@ class _$ValidatedSubProductOnSubmit implements ValidatedSubProductOnSubmit {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedSubProductOnSubmit(subProduct);
   }
 
@@ -10337,6 +10890,8 @@ class _$ValidatedSubProductOnSubmit implements ValidatedSubProductOnSubmit {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10377,6 +10932,7 @@ class _$ValidatedSubProductOnSubmit implements ValidatedSubProductOnSubmit {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10403,6 +10959,7 @@ class _$ValidatedSubProductOnSubmit implements ValidatedSubProductOnSubmit {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedSubProductOnSubmit(this);
   }
 
@@ -10434,6 +10991,7 @@ class _$ValidatedSubProductOnSubmit implements ValidatedSubProductOnSubmit {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10565,6 +11123,10 @@ class _$ValidatedSubProductOnChange implements ValidatedSubProductOnChange {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10591,6 +11153,7 @@ class _$ValidatedSubProductOnChange implements ValidatedSubProductOnChange {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedSubProductOnChange(subProduct);
   }
 
@@ -10627,6 +11190,8 @@ class _$ValidatedSubProductOnChange implements ValidatedSubProductOnChange {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10667,6 +11232,7 @@ class _$ValidatedSubProductOnChange implements ValidatedSubProductOnChange {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10693,6 +11259,7 @@ class _$ValidatedSubProductOnChange implements ValidatedSubProductOnChange {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return validatedSubProductOnChange(this);
   }
 
@@ -10724,6 +11291,7 @@ class _$ValidatedSubProductOnChange implements ValidatedSubProductOnChange {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10842,6 +11410,10 @@ class _$DeleteSubProduct implements DeleteSubProduct {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10868,6 +11440,7 @@ class _$DeleteSubProduct implements DeleteSubProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return deleteSubProduct(subProductArrayIndex);
   }
 
@@ -10904,6 +11477,8 @@ class _$DeleteSubProduct implements DeleteSubProduct {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10944,6 +11519,7 @@ class _$DeleteSubProduct implements DeleteSubProduct {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -10970,6 +11546,7 @@ class _$DeleteSubProduct implements DeleteSubProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return deleteSubProduct(this);
   }
 
@@ -11001,6 +11578,7 @@ class _$DeleteSubProduct implements DeleteSubProduct {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -11093,6 +11671,10 @@ class _$CancelCurrentSubProduct implements CancelCurrentSubProduct {
     @required Result validatedSubProductOnChange(SubProduct subProduct),
     @required Result deleteSubProduct(int subProductArrayIndex),
     @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -11119,6 +11701,7 @@ class _$CancelCurrentSubProduct implements CancelCurrentSubProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return cancelCurrentSubProduct();
   }
 
@@ -11155,6 +11738,8 @@ class _$CancelCurrentSubProduct implements CancelCurrentSubProduct {
     Result validatedSubProductOnChange(SubProduct subProduct),
     Result deleteSubProduct(int subProductArrayIndex),
     Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -11195,6 +11780,7 @@ class _$CancelCurrentSubProduct implements CancelCurrentSubProduct {
         Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     @required Result deleteSubProduct(DeleteSubProduct value),
     @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
   }) {
     assert(initialState != null);
     assert(validatedProduct != null);
@@ -11221,6 +11807,7 @@ class _$CancelCurrentSubProduct implements CancelCurrentSubProduct {
     assert(validatedSubProductOnChange != null);
     assert(deleteSubProduct != null);
     assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
     return cancelCurrentSubProduct(this);
   }
 
@@ -11252,6 +11839,7 @@ class _$CancelCurrentSubProduct implements CancelCurrentSubProduct {
     Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
     Result deleteSubProduct(DeleteSubProduct value),
     Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -11264,4 +11852,296 @@ class _$CancelCurrentSubProduct implements CancelCurrentSubProduct {
 
 abstract class CancelCurrentSubProduct implements CreateProductState {
   const factory CancelCurrentSubProduct() = _$CancelCurrentSubProduct;
+}
+
+abstract class $CancelProductCreationCopyWith<$Res> {
+  factory $CancelProductCreationCopyWith(CancelProductCreation value,
+          $Res Function(CancelProductCreation) then) =
+      _$CancelProductCreationCopyWithImpl<$Res>;
+  $Res call(
+      {Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure});
+}
+
+class _$CancelProductCreationCopyWithImpl<$Res>
+    extends _$CreateProductStateCopyWithImpl<$Res>
+    implements $CancelProductCreationCopyWith<$Res> {
+  _$CancelProductCreationCopyWithImpl(
+      CancelProductCreation _value, $Res Function(CancelProductCreation) _then)
+      : super(_value, (v) => _then(v as CancelProductCreation));
+
+  @override
+  CancelProductCreation get _value => super._value as CancelProductCreation;
+
+  @override
+  $Res call({
+    Object cleanUpFunctionSuccessFailure = freezed,
+  }) {
+    return _then(CancelProductCreation(
+      cleanUpFunctionSuccessFailure: cleanUpFunctionSuccessFailure == freezed
+          ? _value.cleanUpFunctionSuccessFailure
+          : cleanUpFunctionSuccessFailure
+              as Either<CreateProductOnExitFailure, Unit>,
+    ));
+  }
+}
+
+class _$CancelProductCreation implements CancelProductCreation {
+  const _$CancelProductCreation({this.cleanUpFunctionSuccessFailure});
+
+  @override
+  final Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure;
+
+  @override
+  String toString() {
+    return 'CreateProductState.cancelProductCreation(cleanUpFunctionSuccessFailure: $cleanUpFunctionSuccessFailure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CancelProductCreation &&
+            (identical(other.cleanUpFunctionSuccessFailure,
+                    cleanUpFunctionSuccessFailure) ||
+                const DeepCollectionEquality().equals(
+                    other.cleanUpFunctionSuccessFailure,
+                    cleanUpFunctionSuccessFailure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(cleanUpFunctionSuccessFailure);
+
+  @override
+  $CancelProductCreationCopyWith<CancelProductCreation> get copyWith =>
+      _$CancelProductCreationCopyWithImpl<CancelProductCreation>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialState(bool showErrorMessages),
+    @required
+        Result validatedProduct(Either<CreateProduct, CreateProduct> entity,
+            bool showErrorMessages),
+    @required
+        Result createProductSuccessFailure(
+            Either<CreateProductFailure, Unit> product),
+    @required Result isSubmittingProduct(),
+    @required
+        Result fetchedCategoriesResult(
+            Either<GetCategoryFailure, List<String>>
+                getCategoriesSuccessFailure),
+    @required Result fetchingCategories(),
+    @required
+        Result submitSelectedCategories(KtList<String> selectedCategories),
+    @required Result cancelSelectedCategories(),
+    @required Result clearSelectedCategories(),
+    @required Result openImagePage(),
+    @required
+        Result validatedImage(ProductImage productImage, String imagePath),
+    @required Result uploadingImage(),
+    @required
+        Result uploadedImageResult(
+            Either<ImageFailure, ImageProperties> imageUploadSuccessFailure),
+    @required Result isSubmittingImage(),
+    @required Result discardSelectedImages(),
+    @required
+        Result deleteImageSuccessFailure(
+            Either<ImageFailure, ImageProperties> imageDeleteSuccessFailure),
+    @required Result deletingImage(),
+    @required Result closeImagePage(),
+    @required Result openSubProductPage(TypesList addSubProductSuccessFailure),
+    @required Result loadSubProduct(int subProductArrayIndex),
+    @required Result isSubmittingSubProducts(),
+    @required Result validatedSubProductOnSubmit(SubProduct subProduct),
+    @required Result validatedSubProductOnChange(SubProduct subProduct),
+    @required Result deleteSubProduct(int subProductArrayIndex),
+    @required Result cancelCurrentSubProduct(),
+    @required
+        Result cancelProductCreation(
+            Either<CreateProductOnExitFailure, Unit>
+                cleanUpFunctionSuccessFailure),
+  }) {
+    assert(initialState != null);
+    assert(validatedProduct != null);
+    assert(createProductSuccessFailure != null);
+    assert(isSubmittingProduct != null);
+    assert(fetchedCategoriesResult != null);
+    assert(fetchingCategories != null);
+    assert(submitSelectedCategories != null);
+    assert(cancelSelectedCategories != null);
+    assert(clearSelectedCategories != null);
+    assert(openImagePage != null);
+    assert(validatedImage != null);
+    assert(uploadingImage != null);
+    assert(uploadedImageResult != null);
+    assert(isSubmittingImage != null);
+    assert(discardSelectedImages != null);
+    assert(deleteImageSuccessFailure != null);
+    assert(deletingImage != null);
+    assert(closeImagePage != null);
+    assert(openSubProductPage != null);
+    assert(loadSubProduct != null);
+    assert(isSubmittingSubProducts != null);
+    assert(validatedSubProductOnSubmit != null);
+    assert(validatedSubProductOnChange != null);
+    assert(deleteSubProduct != null);
+    assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
+    return cancelProductCreation(cleanUpFunctionSuccessFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialState(bool showErrorMessages),
+    Result validatedProduct(
+        Either<CreateProduct, CreateProduct> entity, bool showErrorMessages),
+    Result createProductSuccessFailure(
+        Either<CreateProductFailure, Unit> product),
+    Result isSubmittingProduct(),
+    Result fetchedCategoriesResult(
+        Either<GetCategoryFailure, List<String>> getCategoriesSuccessFailure),
+    Result fetchingCategories(),
+    Result submitSelectedCategories(KtList<String> selectedCategories),
+    Result cancelSelectedCategories(),
+    Result clearSelectedCategories(),
+    Result openImagePage(),
+    Result validatedImage(ProductImage productImage, String imagePath),
+    Result uploadingImage(),
+    Result uploadedImageResult(
+        Either<ImageFailure, ImageProperties> imageUploadSuccessFailure),
+    Result isSubmittingImage(),
+    Result discardSelectedImages(),
+    Result deleteImageSuccessFailure(
+        Either<ImageFailure, ImageProperties> imageDeleteSuccessFailure),
+    Result deletingImage(),
+    Result closeImagePage(),
+    Result openSubProductPage(TypesList addSubProductSuccessFailure),
+    Result loadSubProduct(int subProductArrayIndex),
+    Result isSubmittingSubProducts(),
+    Result validatedSubProductOnSubmit(SubProduct subProduct),
+    Result validatedSubProductOnChange(SubProduct subProduct),
+    Result deleteSubProduct(int subProductArrayIndex),
+    Result cancelCurrentSubProduct(),
+    Result cancelProductCreation(
+        Either<CreateProductOnExitFailure, Unit> cleanUpFunctionSuccessFailure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (cancelProductCreation != null) {
+      return cancelProductCreation(cleanUpFunctionSuccessFailure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialState(InitialState value),
+    @required Result validatedProduct(ValidatedProduct value),
+    @required
+        Result createProductSuccessFailure(CreateProductSuccessFailure value),
+    @required Result isSubmittingProduct(IsSubmittingProduct value),
+    @required Result fetchedCategoriesResult(FetchedCategoriesResult value),
+    @required Result fetchingCategories(FetchingCategories value),
+    @required Result submitSelectedCategories(SubmitSelectedCategories value),
+    @required Result cancelSelectedCategories(CancelSelectedCategories value),
+    @required Result clearSelectedCategories(ClearSelectedCategories value),
+    @required Result openImagePage(OpenImagePage value),
+    @required Result validatedImage(ValidatedImage value),
+    @required Result uploadingImage(UploadingImage value),
+    @required Result uploadedImageResult(UploadedImageResult value),
+    @required Result isSubmittingImage(IsSubmittingImage value),
+    @required Result discardSelectedImages(DiscardSelectedImages value),
+    @required Result deleteImageSuccessFailure(DeleteImageSuccessFailure value),
+    @required Result deletingImage(DeletingImage value),
+    @required Result closeImagePage(CloseImagePage value),
+    @required Result openSubProductPage(OpenSubProductPage value),
+    @required Result loadSubProduct(LoadSubProduct value),
+    @required Result isSubmittingSubProducts(IsSubmittingSubProducts value),
+    @required
+        Result validatedSubProductOnSubmit(ValidatedSubProductOnSubmit value),
+    @required
+        Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
+    @required Result deleteSubProduct(DeleteSubProduct value),
+    @required Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    @required Result cancelProductCreation(CancelProductCreation value),
+  }) {
+    assert(initialState != null);
+    assert(validatedProduct != null);
+    assert(createProductSuccessFailure != null);
+    assert(isSubmittingProduct != null);
+    assert(fetchedCategoriesResult != null);
+    assert(fetchingCategories != null);
+    assert(submitSelectedCategories != null);
+    assert(cancelSelectedCategories != null);
+    assert(clearSelectedCategories != null);
+    assert(openImagePage != null);
+    assert(validatedImage != null);
+    assert(uploadingImage != null);
+    assert(uploadedImageResult != null);
+    assert(isSubmittingImage != null);
+    assert(discardSelectedImages != null);
+    assert(deleteImageSuccessFailure != null);
+    assert(deletingImage != null);
+    assert(closeImagePage != null);
+    assert(openSubProductPage != null);
+    assert(loadSubProduct != null);
+    assert(isSubmittingSubProducts != null);
+    assert(validatedSubProductOnSubmit != null);
+    assert(validatedSubProductOnChange != null);
+    assert(deleteSubProduct != null);
+    assert(cancelCurrentSubProduct != null);
+    assert(cancelProductCreation != null);
+    return cancelProductCreation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialState(InitialState value),
+    Result validatedProduct(ValidatedProduct value),
+    Result createProductSuccessFailure(CreateProductSuccessFailure value),
+    Result isSubmittingProduct(IsSubmittingProduct value),
+    Result fetchedCategoriesResult(FetchedCategoriesResult value),
+    Result fetchingCategories(FetchingCategories value),
+    Result submitSelectedCategories(SubmitSelectedCategories value),
+    Result cancelSelectedCategories(CancelSelectedCategories value),
+    Result clearSelectedCategories(ClearSelectedCategories value),
+    Result openImagePage(OpenImagePage value),
+    Result validatedImage(ValidatedImage value),
+    Result uploadingImage(UploadingImage value),
+    Result uploadedImageResult(UploadedImageResult value),
+    Result isSubmittingImage(IsSubmittingImage value),
+    Result discardSelectedImages(DiscardSelectedImages value),
+    Result deleteImageSuccessFailure(DeleteImageSuccessFailure value),
+    Result deletingImage(DeletingImage value),
+    Result closeImagePage(CloseImagePage value),
+    Result openSubProductPage(OpenSubProductPage value),
+    Result loadSubProduct(LoadSubProduct value),
+    Result isSubmittingSubProducts(IsSubmittingSubProducts value),
+    Result validatedSubProductOnSubmit(ValidatedSubProductOnSubmit value),
+    Result validatedSubProductOnChange(ValidatedSubProductOnChange value),
+    Result deleteSubProduct(DeleteSubProduct value),
+    Result cancelCurrentSubProduct(CancelCurrentSubProduct value),
+    Result cancelProductCreation(CancelProductCreation value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (cancelProductCreation != null) {
+      return cancelProductCreation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CancelProductCreation implements CreateProductState {
+  const factory CancelProductCreation(
+      {Either<CreateProductOnExitFailure, Unit>
+          cleanUpFunctionSuccessFailure}) = _$CancelProductCreation;
+
+  Either<CreateProductOnExitFailure, Unit> get cleanUpFunctionSuccessFailure;
+  $CancelProductCreationCopyWith<CancelProductCreation> get copyWith;
 }
